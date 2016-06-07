@@ -951,7 +951,7 @@
 		position: fixed;
 		text-align: right;
 		top: 0;
-		width: 32%;
+		width: 26%;
         padding-left: 20px;
 	}
 
@@ -965,7 +965,7 @@
 
 		#header h1 {
 			color: rgba(0, 0, 0, 0.5);
-			font-size: 1.35em;
+			font-size: 0.8em;
 			line-height: 1.75em;
 			margin: 0;
             padding-left: 
@@ -984,7 +984,7 @@
 		padding: 0 4em 4em 0;
 		position: fixed;
 		text-align: right;
-		width: 33%;
+		width: 26%;
 	}
 
 		#footer .icons {
@@ -1008,9 +1008,6 @@
 		}
 
 			#footer .copyright li {
-				border-left: solid 1px rgba(0, 0, 0, 0.25);
-				display: inline-block;
-				line-height: 1em;
 				margin-left: 0.75em;
 				padding-left: 0.75em;
 			}
