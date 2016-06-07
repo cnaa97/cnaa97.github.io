@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kakaoStyle</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+
+
+    <script src="js/basic.js"></script>
+
+</head>
+<body>
+    <div class="img_popup">
+        <div class="img_popup_img">
+            <img src="images/1.jpg" alt="">
+            <div class="img_popup_close"><i class="fa fa-times"></i></div>
+        </div>
+    </div>
+    <div class="wrapper">
+            <div class="menu_con">
+               <div class="menu_con_top">
+                    <div class="menu_con_exit">
+                         <i class="fa fa-times" id="menu_con_exit"></i>
+                    </div>
+                    <div class="menu_con_setting">
+                         <i class="fa fa-cog" id="menu_con_setting"></i>
+                    </div>
+                    <div class="menu_con_profile">
+                        <img src="images/profile.jpg">
+                    </div>
+                    <div class="menu_con_name">박준호</div>    
+               </div>
+               <div class="menu_con_menu">
+                    <ul>
+                        <li><a href="">좋아요</a></li>
+                        <li><a href="">최근 본 상품</a></li>
+                        <li><a href="">맞춤 의상실</a></li>
+                        <li><a href="">단골샵</a></li>
+                        <li><a href="">쿠폰</a></li>
+                    </ul>
+                    <h2 class="menu_con_logo"><a href="/">kakao<span>Style</span></a></h2>
+                </div>
+            </div>
+        <div class="main_top">
+            <div class="menu_icon">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div class="menu_bar_like">
+                <i class="fa fa-heart-o"></i>
+            </div>
+            <div class="menu_bar_find">
+                <i class="fa fa-search"></i>
+            </div>
+            <h1 class="main_logo"><a href="/">kakao<span>style</span></a></h1>
+        </div>
+        <div class="main_menu">
+            <ul>
+                <li><a href="#menu_hot" id="tab01" class="tab_active">HOT</a></li>
+                <li><a href="#menu_item" id="tab02">ITEM</a></li>
+                <li><a href="#menu_sale" id="tab03">SALE</a></li>
+                <li><a href="#menu_shop" id="tab04">SHOP</a></li>
+            </ul>
+        </div>
+        <div class="content" id="menu_hot">
+            <div class="content_page1">
+                <div class="content01"><img src="images/1.jpg"></div>
+                <div class="content02"><img src="images/2.jpg"></div>
+                <div class="content03"><img src="images/3.jpg"></div>
+                <div class="content04"><img src="images/4.jpg"></div>
+                <div class="content05"><img src="images/5.jpg"></div>  
+                <div class="content06"><img src="images/6.jpg"></div>  
+                <div class="content07"><img src="images/7.jpg"></div>
+            </div>
+            <!--<div class="content_page2">
+                <div class="content01"><img src="images/7.jpg"></div>
+                <div class="content02"><img src="images/6.jpg"></div>
+                <div class="content03"><img src="images/5.jpg"></div>
+                <div class="content04"><img src="images/4.jpg"></div>
+                <div class="content05"><img src="images/3.jpg"></div>  
+                <div class="content06"><img src="images/2.jpg"></div>  
+                <div class="content07"><img src="images/1.jpg"></div>  
+            </div>-->
+        </div>
+           
+            <!-- 아이템 -->
+        <div class="content_item" id="menu_item">
+           <div class="item_banner">
+               <img src="images/sale_banner.jpg">
+           </div>
+           <div class="item_categori">
+               <ul class="item_categori_round">
+                  <li class="item_categori_con">
+                      <h4 class="item_categori_title"><a href="">티셔츠</a></h4>
+                      <img src="images/item_tshirt.png" alt="">
+                  </li>
+                  <li class="item_categori_con">
+                      <h4 class="item_categori_title" ><a href="" >반바지</a></h4>
+                      <img src="images/item_short.png" alt="">
+                  </li>
+                  <li class="item_categori_con">
+                      <h4 class="item_categori_title"><a href="">여성의류</a></h4>
+                      <img src="images/item_woman.png" alt="">
+                  </li>
+               </ul> 
+            </div>
+               <div class="item_tags">
+                   <div class="item_tags_all">#볼륨업</div>
+                   <div class="item_tags_all">#인생뷰티템</div>
+                   <div class="item_tags_all">#플랫슈즈</div>
+                   <div class="item_tags_all">#꿀팁</div>
+                   <div class="item_tags_all">#기본템</div>
+                   <div class="item_tags_all">#간지</div>
+                   <div class="item_tags_all">#센스</div>
+                   <div class="item_tags_all">#셀러브리티</div>
+               </div>
+           </div>
+        </div>
+           
+            <!-- 세일 -->
+        <div class="content_sale" id="menu_sale">
+            <div class="sale_product">
+                <div class="sale_product_img">
+                    <img src="images/sale_product1.png" alt="">
+                </div>
+                <h3 class="sale_product_title">레이어드에 따라 다른 느낌으로!</h3>
+                <h3 class="sale_product_subtitle">시크릿</h3>
+                <span class="sale_product_delivery">무료배송</span>     
+                <span class="sale_product_cut_price">15,000원</span>     
+                <span class="sale_product_cut_per">22% <i class="fa fa-arrow-down"></i></span>
+                <span class="sale_product_price">11,900원</span>
+            </div>
+            <div class="sale_product">
+                <div class="sale_product_img">
+                    <img src="images/sale_product1.png" alt="">
+                </div>
+                <h3 class="sale_product_title">레이어드에 따라 다른 느낌으로!</h3>
+                <h3 class="sale_product_subtitle">시크릿</h3>
+                <span class="sale_product_delivery">무료배송</span>     
+                <span class="sale_product_cut_price">15,000원</span>     
+                <span class="sale_product_cut_per">22% <i class="fa fa-arrow-down"></i></span>
+                <span class="sale_product_price">11,900원</span>
+            </div>
+            <div class="sale_product">
+                <div class="sale_product_img">
+                    <img src="images/sale_product1.png" alt="">
+                </div>
+                <h3 class="sale_product_title">레이어드에 따라 다른 느낌으로!</h3>
+                <h3 class="sale_product_subtitle">시크릿</h3>
+                <span class="sale_product_delivery">무료배송</span>     
+                <span class="sale_product_cut_price">15,000원</span>     
+                <span class="sale_product_cut_per">22% <i class="fa fa-arrow-down"></i></span>
+                <span class="sale_product_price">11,900원</span>
+            </div>
+            <div class="sale_product">
+                <div class="sale_product_img">
+                    <img src="images/sale_product1.png" alt="">
+                </div>
+                <h3 class="sale_product_title">레이어드에 따라 다른 느낌으로!</h3>
+                <h3 class="sale_product_subtitle">시크릿</h3>
+                <span class="sale_product_delivery">무료배송</span>     
+                <span class="sale_product_cut_price">15,000원</span>     
+                <span class="sale_product_cut_per">22% <i class="fa fa-arrow-down"></i></span>
+                <span class="sale_product_price">11,900원</span>
+            </div>
+        </div>
+           
+        <!-- 샵 --> 
+        <div class="content_shop" id="menu_shop">
+            <ul class="shop_seller">
+                 <li class="shop_seller_con">
+                      <h4 class="shop_seller_name_all">단골샵<br>전체보기</h4>
+                      <div class="shop_all_bg"></div> 
+                 </li>
+                  <li class="shop_seller_con">
+                      <h4 class="shop_seller_name">임블리</h4>
+                      <span class="shop_seller_tag">로맨틱</span>
+                      <img src="images/shop_img.png" alt="">
+                 </li>
+                 <li class="shop_seller_con">
+                      <h4 class="shop_seller_name">임블리</h4>
+                      <span class="shop_seller_tag">로맨틱</span>
+                      <img src="images/shop_img.png" alt="">
+                 </li>
+            </ul>
+            <div class="shop_concept">
+                <span class="shop_concept_title">Shop Concept</span>
+                <div class="shop_tags">
+                    <span class="shop_tag tag_pink">섹시</span>
+                    <span class="shop_tag">뷰티</span>
+                    <span class="shop_tag">로맨틱</span>
+                    <span class="shop_tag tag_pink">슈즈</span>
+                    <span class="shop_tag tag_violet">비치웨어</span>
+                    <span class="shop_tag">큐트</span>
+                    <span class="shop_tag">댄디/심플</span>
+                    <span class="shop_tag tag_pink">유아동패션</span>
+                    <span class="shop_tag">엑세서리</span>
+                    <span class="shop_tag tag_violet">디자이너샵</span>
+                    <span class="shop_tag tag_pink">란제리</span>
+                    <span class="shop_tag tag_pink">헐리웃스타일</span>
+                    <span class="shop_tag">가방</span>
+                </div>
+            </div> 
+        </div>
+    </body>
+</html>

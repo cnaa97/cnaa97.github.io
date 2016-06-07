@@ -1,0 +1,136 @@
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
+
+h1,h2,p,h3{
+    color: #fff;
+}
+
+.w_box{
+    
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
+    background-color: #00A3F8;
+    padding-top: em;
+    height: 23em;
+    border-radius: 14px;
+}
+.quote{
+}
+.quote i{
+    color: #fff;
+    opacity: 0.5;
+    margin-top: 30px;
+    font-size: 1.7em;
+}
+.quote i:nth-child(1){
+    margin-right: 70%;
+}
+
+.title{
+    font-family: 'Hanna', serif;
+    font-size: 2.3em;
+    padding: 0 1.5em;
+    margin-top: 0px;
+    line-height: 1.3em;
+}
+.w_center{
+    position: absolute;
+}
+.temp_icon{
+    margin-top: -1em;
+}
+.temp_icon i{
+    position: absolute;
+    font-size: 8em;
+    color:#fff;
+    margin-top: 0px;
+    margin-left: 0.3em;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-name: weather_move;
+    animation-direction: alternate;
+}
+.temp_icon i:hover{
+    color:black;
+}
+
+@keyframes weather_move {
+    50% {
+        margin-top: 5px;
+    }
+    100% {
+        margin-top: 10px;
+    }
+}
+
+.temp_mark{
+    position: absolute;
+    font-size: 3em;
+    right: 0;
+    margin-top: 2.2em;
+    margin-right: -8.1em;   
+    opacity: 0.7;
+}
+#temp{
+    position: absolute;
+    font-size: 4em;
+    margin-left: 3.9em;
+    margin-top: 1.4em;
+}
+#location{
+    position: absolute;
+    right: 0;
+    margin-right: -16em;
+    margin-top: 2.2em;
+    width: 200px;
+    height: 100px;
+    font-size: 1.8em;
+    color: #fff;
+    text-align: left;
+}
+
+
+.w_box2{
+    margin: 0 auto;
+    background-color: #0070C5;
+    width: 50%;
+    height: 2.3em;
+    margin-top: 12px;
+    border-radius: 14px;
+    color: #fff;
+    font-size: 1.4em;
+    position: relative;
+}
+.w_min, .w_max{
+    margin-top: 8px;        
+}
+.w_min{
+    position: absolute;
+    left: 0;
+    margin-left: 3em;
+}
+.w_min:after{
+    content: "";
+    position: absolute;
+    margin-top: -40px;
+    padding-right: 6.6em;
+    padding-top: 53px;
+    border-right: 4px solid #fff;
+}
+.w_max{
+    position: absolute;
+    right: 0;
+    margin-right: 3em;
+}
+
+.w-box2 .w_max .min{
+
+}
+.w_min i, .w_max i{
+    padding-right: 10px;
+ }

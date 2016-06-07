@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>kantukan : 3조</title>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+    <!--<link rel="javascript" href="js/weather.js">-->
+    <link rel="stylesheet" href="css/weather.css">
+    <link rel="stylesheet" href="weather-icons/css/weather-icons.min.css">
+<style>
+    /* 미나씨 */
+    #header ul{
+        position: relative;
+        list-style-type: none;
+        padding: 0;
+    }
+    #header h3{
+        text-align: center;
+        color: #2E2E2E;
+        font-family: 'Noto Sans KR', sans-serif;
+    }
+    #header li{
+        float: right;
+        border: 1px solid #CECECE;
+        margin-right: 0.5em; 
+        border-bottom-width: 0;
+        background-color: #fff;
+        /* 좌상단, 우상단, 우하단, 좌하단 */
+        border-radius: 0px 20px 0px 0px;
+    }
+    #header .selected{
+        position: relative;
+        top: 1px;
+    }
+    #header a{
+            text-decoration: none;
+            color: #000;
+            display: block;
+            padding: 0 1em;
+        }
+
+    #content{
+        clear: right;
+        border: 1px solid #CECECE;
+        text-align: center;
+        padding-top: 3em;
+        padding-bottom: 3em;
+        margin-bottom: -1.1em;
+
+    }   
+    #content>div{
+        display: none;
+    }
+    #content #one{
+        display: block;
+    }
+</style>
+<script>
+
+    $(function(){ // ready
+
+        /*미나씨 작업 삼성카드 앱*/
+        $("#header a").click(function(evt){
+        evt.preventDefault(); /* 스크롤 이벤트 막기 */
+        //일단 selected 클래스를 제거한다음 
+        $("#header li").removeClass("selected");
+        //클릭한 a 요소의 부모요소(li) 에 selected 클래스를 추가 한다. 
+        $(this).parent().addClass("selected");
+
+        $("#content>div").hide();
+        var sel = $(this).attr("href");
+        $(sel).show();
+
+    });
+
+
+        /*-------------*/
+     $("#myBtn").click(function() {
+        $("#topnavi, .wP").slideToggle(speed);
+    });  
+    
+    var speed = 400;   
+        $("#myBtn").click(function(){
+            $(".slidenavi").fadeToggle(speed);
+    });
+ 
+
+    var imgIndex=0;
+    var imgLength = $(".wP .box img").length-2;
+    $("#prev").click(function() {
+        imgIndex--;
+        if(imgIndex < 0) {
+            imgIndex = imgLength;
+            $(".wP .box").animate({left: "-=7612px"}, 400);
+        }
+        else {
+            $(".wP .box").animate({left: "+=1903px"}, 400);
+        }
+    });
+
+
+
+    $("#next").click(function() {
+        imgIndex++;
+        if(imgIndex > imgLength) {
+            imgIndex = 0;
+            $(".wP .box").animate({left: "+=7612px"}, 400);
+        }
+        else {
+            $(".wP .box").animate({left: "-=1903px"}, 400);
+        }
+    });
+
+        
+    // Weather
+        
+if (navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(function(position){
+        
+        // 위도, 경도 불러와서 변수에 저장 
+        var currentLati = position.coords.latitude;
+        var currentLongi = position.coords.longitude;
+        console.log("위도 : "+currentLati + "  경도 : "+currentLongi);
+
+        // Json으로 데이터 가져와서 변수에 저장
+        $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" +currentLati+ "&lon=" +currentLongi+ "&appid=b04b993e833df10bc9881f9a1312292e&units=metric",function(json){
+            var currentTemp = Math.round(json.main.temp);
+            var tempMin = Math.round(json.main.temp_min);
+            var tempMax = Math.round(json.main.temp_max);
+            var weatherIcon = json.weather[0].icon;
+            console.log(weatherIcon);
+
+        // html문서에 현재온도,최저,최고온도 출력 
+        $("#temp").text(currentTemp);
+        $(".min").text(tempMin+"°C");                        
+        $(".max").text(tempMax+"°C");
+
+        // 온도에 따라 날씨 아이콘 출력 다르게 
+        switch(weatherIcon) {
+            case '01d':
+                $(".temp_icon > i").removeClass();
+                $(".temp_icon > i").addClass("wi wi-day-sunny");
+                break;
+            case '02d':
+                $(".temp_icon > i").removeClass();
+                $(".temp_icon > i").addClass("wi wi-day-cloudy");
+                break;
+            case '03d':
+                $(".temp_icon > i").removeClass();
+                $(".temp_icon > i").addClass("wi wi-cloud");
+                break;
+            case '04d':
+                $(".temp_icon > i").removeClass();
+                $(".temp_icon > i").addClass("wi wi-cloudy");
+                break;
+            case '09d':
+                $(".temp_icon > i").removeClass();
+                $(".temp_icon > i").addClass("wi wi-showers");
+                break;
+            case '10d':
+                $(".temp_icon > i").removeClass();
+                $(".temp_icon > i").addClass("wi wi-day-rain");
+                break;
+            case '11d':
+                $(".temp_icon > i").removeClass();
+                $(".temp_icon > i").addClass("wi wi-thunderstorm");
+                break;
+            case '13d':
+                $(".temp_icon > i").removeClass();
+                $(".temp_icon > i").addClass("wi wi-snow");
+                break;
+            case '50d':
+                $(".temp_icon > i").removeClass();
+                $(".temp_icon > i").addClass("wi wi-fog");
+                break;
+            case '01n':
+                $(".temp_icon > i").removeClass();
+                $(".temp_icon > i").addClass("wi wi-night-clear");
+                break;
+            case '02n':
+                $(".temp_icon > i").removeClass();
+                $(".temp_icon > i").addClass("wi wi-night-alt-cloudy");
+                break;
+            case '03n':
+                $(".temp_icon > i").removeClass();
+                $(".temp_icon > i").addClass("wi wi-cloud");
+                break;
+            case '04n':
+                $(".temp_icon > i").removeClass();
+                $(".temp_icon > i").addClass("wi wi-cloudy");
+                break;
+            case '09n':
+                $(".temp_icon > i").removeClass();
+                $(".temp_icon > i").addClass("wi wi-rain");
+                break;
+            case '10n':
+                $(".temp_icon > i").removeClass();
+                $(".temp_icon > i").addClass("wi wi-night-rain");
+                break;
+            case '11n':
+                $(".temp_icon > i").removeClass();
+                $(".temp_icon > i").addClass("wi wi-night-lightning");
+                break;
+            case '13n':
+                $(".temp_icon > i").removeClass();
+                $(".temp_icon > i").addClass("wi wi-night-snow");
+                break;
+            case '50n':
+                $(".temp_icon > i").removeClass();
+                $(".temp_icon > i").addClass("wi wi-fog");
+                break;
+            default:
+                break;
+        } 
+}); //open weather map
+
+        // 도시 이름 가져오기 
+        $.getJSON("http://maps.googleapis.com/maps/api/geocode/json?latlng=" +currentLati+ "," +currentLongi+ "&sensor=true", function(json){
+        var city = json.results[0].address_components[3].long_name;
+    
+        // 도시이름 출력
+        $("#location").text(city);
+        });앱
+
+});// if
+    
+    /* 회원가입 show/hide*/
+    $('#join').click(function(){
+        $('.myform_wrapper').fadeIn();    
+    });
+    
+    $('.myform_wrapper').click(function(){
+        $('.myform_wrapper').fadeOut();
+    });
+}
+    
+   
+        
+        
+    }); //ready
+</script>
+
+</head>
+
+<body>
+    <div class="container">
+       
+            <div class="myform_wrapper">
+                <div id="style" class="myform">
+                    <form id="form" name="form" method="post">
+                    <h1>회원가입</h1>
+                    <p>모두 입력해 주세요.</p>
+
+                    <label>Name
+                    <span class="small">이름 입력</span>
+                    </label>
+                    <input type="text" name="name" id="name" />
+
+                    <label>Email
+                    <span class="small">이메일주소</span>
+                    </label>
+                    <input type="text" name="email" id="email" />
+
+                    <label>Password
+                    <span class="small">패스워드 6자 이상</span>
+                    </label>
+                    <input type="password" name="password" id="password" />
+
+                    <button type="submit">Sign-up</button>
+                    <div class="spacer"></div>
+
+                    </form>
+                </div>
+            </div>
+
+       
+       
+        <div class="wrapper">
+            
+            <div id="header1">
+                <div id="myBtn" class="fa fa-bars"></div>
+                <div class="logo">
+                    <img src="images/banner.jpg" alt="">        
+                </div>
+            </div>
+             
+            <!-- 김양회 : 슬라이드다운 메뉴 -->
+            <div class="slidenavi">
+                <div class="all_category">
+                <ul>
+                    <li><a href="#">S/S 특별기획</a>
+                    <ul>
+                        <li></li>
+                    </ul>
+                    </li>
+                     
+                    <li><a href="#">등산하기 좋은 날 </a>
+                    <ul class="subcate12">
+                        <li><a href="#">봄&amp;가을</a></li>
+                        <li><a href="#">여름</a></li>
+                        <li><a href="#">겨울</a></li>
+                    </ul>
+                    </li>
+
+                    <li><a href="#">삼성페이</a>
+                    <ul class="subcate13">
+                        <li><a href="#">칸투칸x삼성페이</a></li>
+                        <li><a href="#">혜택확인</a></li>
+                        <li><a href="#">삼성페이 안내</a></li>
+                        <li><a href="#">할인율</a></li>
+                    </ul>
+                    </li> 
+
+                    <li><a href="#">BEST 30</a><ul>
+                        <li></li>
+                    </ul>
+                    </li>
+
+                    <li><a href="#">REVIEW 30</a>
+                    <ul>
+                        <li></li>
+                    </ul>
+                    </li>
+
+                    <li><a href="#">PLAY Kantukan</a>
+                    <ul>
+                        <li></li>
+                    </ul>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li><a href="#">TOP</a>
+                    <ul class="subcate2">
+                        <li><a href="#">티셔츠</a></li>
+                        <li><a href="#">맨투맨</a></li>
+                        <li><a href="#">니트</a></li>
+                        <li><a href="#">후회 없을 자켓</a></li>
+                    </ul>
+                    </li>
+
+                    <li><a href="#">BLOUSE&amp;SHIRTS</a>
+                    <ul class="subcate3">
+                        <li><a href="#">블라우스</a></li>
+                        <li><a href="#">셔츠</a></li>
+                    </ul>
+                    </li>
+                            
+                    <li><a href="#">OUTER</a>
+                    <ul class="subcate4">
+                        <li><a href="#">자켓</a></li>
+                        <li><a href="#">점퍼</a></li>
+                        <li><a href="#">코트</a></li>
+                        <li><a href="#">가디건</a></li>
+                        <li><a href="#">조끼</a></li>
+                        <li><a href="#">무스탕</a></li>
+                    </ul>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li><a href="#">OPS</a>
+                        <ul class="subcate5">
+                            <li><a href="/#">미니원피스</a></li>
+                            <li><a href="#">롱원피스</a></li>
+                            <li><a href="#">오버롤</a></li>
+                        </ul>
+                    </li>
+                     
+                    <li><a href="#">PANTS</a>
+                        <ul class="subcate6">
+                            <li><a href="#">데님</a></li>
+                            <li><a href="#">슬랙스/코튼</a></li>
+                            <li><a href="#">쇼츠</a></li>
+                            <li><a href="#">트레이닝/레깅스</a></li>
+                            <li><a href="#">와이드</a></li>
+                            <li><a href="#">부츠컷</a></li>
+                            <li><a href="#">스키니</a></li>
+                            <li><a href="#">스트레이트</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">SKIRT</a>
+                    <ul class="subcate7">
+                        <li><a href="#">미니스커트</a></li>
+                        <li><a href="#">롱스커트</a></li>
+                    </ul>
+                    </li>
+
+               
+                </ul>
+                
+                <ul>
+                    <li><a href="#">MADE</a>
+                    <ul class="subcate1">
+                        <li><a href="#">아웃도어</a></li>
+                        <li><a href="#">상의</a></li>
+                        <li><a href="#">아쿠아 트레킹화</a></li>
+                        <li><a href="#">5부, 7부 바지</a></li>
+                        <li><a href="#">스커트</a></li>
+                        <li><a href="#">아우터</a></li>
+                        <li><a href="#">악세사리</a></li>
+                    </ul>
+                    </li>
+                            
+                    <li><a href="#">SNS</a>
+                    <ul>
+                        <li><a href="#">인스타그램</a></li>
+                        <li><a href="#">블로그</a></li>
+                        <li><a href="#">페이스북</a></li>
+                    </ul>
+                    </li> 
+                </ul>
+                </div>
+            </div>
+
+
+
+
+            <!-- 박준호 : 스크롤링 -->
+            <div id="header2">
+                <div id="topnavi">
+                <ul>
+                    <li><a href="/assets/160605_semi_project/external/samsung_mina/samsungCard.html" target="_blank">삼성카드</a></li>
+                    <li><a href="/assets/160605_semi_project/external/kakao_mina/LFmall.html" target="_blank">카카오 스타일</a></li>
+                    <li><a href="/assets/160605_semi_project/external/kakao_junho/index.html" target="_blank">카카오 스타일 반응형</a></li>
+                    <li><a href="/assets/160605_semi_project/weather.html" target="_blank">날씨</a></li>
+                    <li><a href="javascript:" id="join">회원가입</a></li>
+                    <li><a href="/assets/160605_semi_project/external/nav.html">탭메뉴</a></li>
+                </ul>
+            </div>
+            </div>
+
+
+
+
+
+            <!-- 김양회 : 이미지 슬라이드 가로형 -->
+            <div class="btnWrapper">
+                <a href="javascript:" id="prev" class="fa fa-chevron-circle-left"></a>
+                <a href="javascript:" id="next" class="fa fa-chevron-circle-right"></a>
+            </div>
+
+            <div class="wP">
+                <div class="box"><img src="images/slide01.jpg"></div>
+                <div class="box"><img src="images/slide02.jpg"></div>
+                <div class="box"><img src="images/slide03.jpg"></div>
+                <div class="box"><img src="images/slide04.jpg"></div>
+                <div class="box"><img src="images/slide05.jpg"></div>
+                <div class="box"><img src="images/slide06.jpg"></div>
+
+            </div>
+
+              
+             <div id="content0">
+                <div class="box0"></div>
+                <div class="box0"></div>
+            </div>
+            
+            <!-- 날씨 -->
+            <div class="main_weather">
+                <div class="w_box">
+                    <div class="quote">
+                        <i class="fa fa-quote-left" aria-hidden="true"></i>
+                        <i class="fa fa-quote-right" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="title">나들이 놉! <br> 미세먼지.. 콜록ㅠㅠ</h3>
+                    <div class="w_center">
+                        <div class="temp_icon"><i class="wi wi-fog"></i></div>
+                        <h2 id="temp">24</h2>
+                        <h2 class="temp_mark">°C</h2>
+                        <span id="location">서울특별시</span>
+                    </div>
+                </div>
+                <div class="w_box2">
+                    <div class="w_min">
+                        <i class="fa fa-caret-down"></i>
+                        <span class="min">19°C</span>
+                    </div>
+                    <div class="w_max">
+                        <i class="fa fa-caret-up"></i>
+                        <span class="max">29°C</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 김미나 : 삼성카드 3D 슬라이드 -->
+            <div class="card">
+                <div class="basicTab">
+                    <div id="header">
+                        <h3> 삼성카드 쇼핑 (모바일앱) APP </h3>
+                        <ul>
+                            <li class="selected"><a href="#one"> Shop01 </a></li>
+                            <li><a href="#two"> Shop02 </a></li>
+                            <li><a href="#three"> Shop03 </a></li>
+                        </ul>
+                    </div>
+                    <div id="content">
+                        <div id="one">
+                            <img src="images/Shop01.png" alt="">
+                        </div>
+                        <div id="two">
+                            <img src="images/Shop02.png" alt="">
+                        </div>
+                        <div id="three">
+                            <img src="images/Shop03.png" alt="">
+                        </div>
+                     </div>
+                </div>
+            </div>
+
+            <!-- 은미씨 -->            
+            <div class="wrapper_card">
+                <div class="box2">
+                    <div class="mark">
+                        <i class="que1">"</i>
+                        <i class="que2">"</i>
+                    </div>
+                    <div class="sen"></div>
+                    <div class="name">The buck stop here.</div>
+                    <div class="name1">Harry S Truman</div>
+                    <div class="bottom">
+                        <a href="http://twitter.com/" class="icon">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="http://facebook.com" class="icon1">
+                            <i class="fa fa-facebook " aria-hidden="true"></i>
+                        </a>
+                        <div class="new">new quote</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="content1">
+                <img src="images/01.jpg" class="col-sm-2 col-sm-1">
+                <img src="images/02.jpg" class="col-sm-2 col-sm-1">
+                <img src="images/03.jpg" class="col-sm-2 col-sm-1">
+                <img src="images/04.jpg" class="col-sm-2 col-sm-1">
+                <img src="images/05.jpg" class="col-sm-2 col-sm-1">
+                <img src="images/06.jpg" class="col-sm-2 col-sm-1">	
+            </div>
+
+            <div id="sidebar">
+                
+
+            </div>
+            
+        </div><!-- wrapper -->
+    </div><!-- container -->
+
+    
+    <div id="footer">
+            <p>
+                (주)칸투칸 | 공동 대표이사 :한영란,이병철
+                <br>
+                <span class="address">부산광역시 연제구 거제동 1488-5번지 칸투칸빌딩 4층(법원로32번길 19)</span>
+                <br>
+                사업자등록번호 : 617-81-54865 | 사업자 정보확인  | 통신판매업신고 : 제2010-부산연제-217호
+                <br>
+                고객센터 : 1544-0466 | FAX : 051-525-6823
+                <br>
+                <span class="copyright">Copyright Kantukan. All rights reserved</span>
+            <p/>
+    </div>
+</body>
+</html>

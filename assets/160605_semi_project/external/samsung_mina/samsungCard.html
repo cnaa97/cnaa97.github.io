@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>samsungCard.html</title>
+
+		<link rel="stylesheet" href="css/font-awesome.css"/>
+	
+	<style>
+
+	.container{
+			width: 800px;
+			margin: 20 300 20 30;
+	}
+
+
+
+		.wrapper{
+			margin: 0 auto;
+			/* 원근감의 깊이 */
+			-webkit-perspective: 500px;
+			/* 시선의 위치 결정 */
+			-webkit-perspective-origin: 50% 50%;
+			background-color: #fff;
+			width: 290px;
+			height: 182px;
+		}
+		.target{
+			position: relative;
+			/* 3d transform 을 하겠다고 설정 */
+			-webkit-transform-style: preserve-3d;
+			/* x, y, z 축이 만나는 지점 설정 */
+			-webkit-transform-origin: 50% 50%;
+			/* transition 효과로 중간과정 보이기 */
+			-webkit-transition: all 0.4s ease-out;
+		}
+		.target > div{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 290px;
+			height: 182px;
+			/* 뒤집었을 때 뒷면이 보일지에 대한 여부 */
+			-webkit-backface-visibility: hidden; /* webkit-backface-visibility: hidden | default | visible; */
+		}
+		.target .front{
+			background-color: #fff;
+			background-image: url("images/shinsegaeCard.png");
+		}
+		.target .back{
+			background-color: #fff;
+			background-image: url("images/costcoCard.png");
+			/* css 로딩 되는 시점에 y 축 기준으로 180도 뒤집어 놓기 */
+			-webkit-transform: rotateY(180deg);
+		}
+		.target:hover{
+			-webkit-transform: rotateY(180deg);
+		}
+		.rotateY{
+			-webkit-transform: rotateY(180deg);
+		}
+		
+		.myBtn{
+			text-align: center;
+		}
+
+
+
+
+
+	.wrapper{
+		margin-top: 100px;
+		-webkit-perspective:1000px;
+		-webkit-perspective-origin: 50% 50%;
+		border: 1px solid #fff;
+	}
+	.cube{
+		position: relative;
+		margin:0 auto;
+		width: 600px;
+		height: 600px;
+		-webkit-transform-style: preserve-3d;
+		-webkit-transform: translateZ(-300px);
+		-webkit-transition: all 0.4s ease-out;
+	}
+	.cube div{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width:600px;
+		height: 600px;
+		background-position: bottom center;
+		clear: both;
+	}
+	.cube > div:nth-child(1){
+		background-color: #fff;
+		background-image: url('images/SKYpass1.png');
+		background-repeat: no-repeat;
+		-webkit-transform: translateZ(300px);
+	}
+	.cube > div:nth-child(2){
+		background-color: yellow;
+		background-image: url('images/SKT2.png');
+		background-repeat: no-repeat;
+		-webkit-transform: rotateY(90deg) translateZ(300px);
+	}
+	.cube > div:nth-child(3){
+		background-color: #59ABE3;
+		background-image: url('images/SCbank4.png');
+		background-repeat: no-repeat;
+		-webkit-transform: rotateY(180deg) translateZ(300px);
+	}
+	.cube > div:nth-child(4){
+		background-color: #fff;
+		background-image: url('images/globalShopping5.png');
+		background-repeat: no-repeat;
+		-webkit-transform: rotateY(270deg) translateZ(300px);
+	}
+	.cube > div > image{
+		margin-top: 100;
+		margin-left: 400;
+		float: right;
+	}
+	.nav-btn{
+		text-align: right;
+	}
+	
+
+
+
+
+	/* 기본 list 의 스타일 제거 */
+	#header ul{
+		position: relative;
+		list-style-type: none;
+		padding: 0;
+	}
+	#header li{
+		float: right;
+		border: 1px solid #000;
+		margin-right: 0.5em; 
+		border-bottom-width: 0;
+		background-color: #fff;
+		/* 좌상단, 우상단, 우하단, 좌하단 */
+		border-radius: 0px 20px 0px 0px;
+	}
+	#header .selected{
+		position: relative;
+		top: 1px;
+	}
+	#header a{
+			text-decoration: none;
+			color: #000;
+			display: block;
+			padding: 0 1em;
+		}
+
+	#content{
+		clear: right;
+		border: 1px solid #000;
+		text-align: center;
+
+	}	
+	#content>div{
+		display: none;
+	}
+	#content #one{
+		display: block;
+	}
+    
+
+
+
+		p#event{
+			position: fixed;
+			width: 400px;
+			height: 320px;
+			background-color: #fff;
+			border: 1px solid #ccc;
+			margin: 0;
+		}
+		.Eone{
+			top: 280px;
+			right: 80px;
+			/* z-index 의 상대값이 클수록 위에 배치 된다. */
+			z-index: 4;
+			background-image: url('images/event1.png');
+		}
+		.Etwo{
+			top: 260px;
+			right: 60px;
+			z-index: 3;
+			background-image: url('images/event2.png');
+		}
+		.Ethree{
+			top: 240px;
+			right: 40px;
+			z-index: 2;
+			background-image: url('images/event3.png');
+		}
+		.Efour{
+			top: 220px;
+			right: 20px;
+			z-index: 1;
+			background-image: url('images/event4.png');
+		}
+
+		.Eone:hover{ 
+			z-index: 999; 
+		}
+		.Etwo:hover{ 
+			z-index: 999; 
+		}
+		.Ethree:hover{ 
+			z-index: 999; 
+		}
+		.Efour:hover{ 
+			z-index: 999; 
+		}
+
+		
+
+
+		
+		#navi{
+			float: left;
+			width: 200px;
+		}
+		#navi2{
+			float: right;
+			width: 150px;
+		}
+
+		h1, h3{
+			margin: 0; 
+		}
+		#header{
+			background-color: gold;
+		}
+		#footer{
+			background-color: silver;
+			clear: both;
+			height: 200px;
+		}
+
+		#footer p{
+			margin: 0;
+			font-size: 1.2em;
+			z-index: 1000;
+		}
+	</style>
+</head>
+
+<body>
+
+<div id="header">
+	<h1> <strong> SAMSUNG CARD </strong> <sup>(Single Web Page)</sup>  _ &nbsp; <sub> Mi NA Kim  (Web Developer) </sub> </h1>
+</div>
+<div id="navi">
+	<ol> <b>조회하기</b>
+	<br>
+		<li><a href="#">명세서</a></li>
+		<li><a href="#">이용내역</a></li>
+		<li><a href="#">카드이용한도</a></li>
+		<li><a href="#">보유카드</a></li>
+	<br>
+		<li><a href="#">포인트내역</a></li>
+		<li><a href="#">기프트카드</a></li>
+		<li><a href="#">생활요금 납부</a></li>
+		<li><a href="#">자동차</a></li>
+	</ol>
+<br>
+	<ol> <b>신청하기</b> 
+	<br>
+		<li><a href="#">카드안내</a></li>
+		<li><a href="#">신청</a></li>
+		<li><a href="#">대금 결제</a></li>
+		<li><a href="#">알림서비스</a></li>
+	</ol>
+<br>
+	<ol> <b>혜택받기</b>
+	<br>
+		<li><a href="#">맞춤혜택</a></li>
+		<li><a href="#">내 카드혜택</a></li>
+		<li><a href="#">혜택리포트</a></li>
+		<li><a href="#">포인트</a></li>
+	<br>
+		<li><a href="#">가맹점 찾기</a></li>
+		<li><a href="#">이벤트</a></li>
+		<li><a href="#">공통서비스 S</a></li>
+		<li><a href="#">프리미엄 라운지</a></li>
+		<li><a href="#">SFC 라운지</a></li>
+		<li><a href="#">BIZ 라운지</a></li>
+	</ol>
+<br>
+	<ol> <b>라이프 즐기기</b>
+	<br>	
+		<li><a href="#">디지털 라이프</a></li>
+		<li><a href="#">쇼핑</a></li>
+		<li><a href="#">여행</a></li>
+		<li><a href="#">컬처</a></li>
+		<li><a href="#">웨딩</a></li>
+		<li><a href="#">리빙</a></li>
+	<br>
+		<li><a href="#">보험</a></li>
+		<li><a href="#">Baby Story</a></li>
+		<li><a href="#">열린 나눔</a></li>
+		<li><a href="#">Young LAB</a></li>
+	</ol>
+</div>
+
+<div id="navi2">
+	<ul>
+		<li><a href="#"> 조회하기 </a></li>
+		<li><a href="#"> 신청하기 </a></li>
+		<li><a href="#"> 혜택받기 </a></li>
+		<li><a href="#"> 라이프 즐기기 </a></li>
+	</ul>
+</div>	
+
+
+
+
+
+
+<div class="container">
+
+<div class="cardFlip">
+	<div class="wrapper">
+ 	<div class="target">
+ 		<div class="front"></div>
+ 		<div class="back"></div>
+ 	</div>
+</div> 
+
+<div class="myBtn">
+<button id="myBtn"> 추천 카드 </button>
+</div>	
+
+<br/>
+<br/>
+
+
+
+
+<div class="3dCube">
+<div class="wrapper">
+	<div class="cube">
+		<div>
+			<h3> 대한항공 the <strong> 1 </strong> (프리미엄 카드) </h3>
+			 
+			<p> 매월 15만원 신세계백화점 상품권 | 
+			<br> 프리미엄 최대 반값 ~ 30% 할인 | 
+			<br> 빅포인트 20% 적립! </p> 
+			<br><br><br>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<img src="images/over1.png" alt=""></p>
+		</div>
+		<div>
+			<h3> SKT 통신사 <b> 2 </b> (숫자 카드) </h3>
+			
+			<p> 대중교통, 통신요금 10% 할인 | 
+			<br> 커피할인 5% 할인 | 
+			<br> 5% 적립 </p> 
+			<br><br><br> 
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<img src="images/over2.png" alt=""></p>
+		</div>
+		<div>
+			<h3> SC스탠다드차트 은행 <b> 4 </b> </h3>
+			 
+			<p> AJ 렌터카 할인 | 
+			<br> 은행 결제계좌 연결 (현금 입출금 기능제공) </p> 
+			<br><br><br>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<img src="images/over3.png" alt=""></p>
+		</div>
+		<div>
+			<h3> 해외직구 <b> 5 </b> </h3>
+			 
+			<p> 배스킨라빈스, 파리바게트, 던킨도넛 10% 할인 | 
+			<br> 서점, 학습지 5% 할인 | 
+			<br> 해외이용 특화혜택 </p>
+			<br><br><br>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<img src="images/over4.png" alt=""></p>
+		</div>
+	</div>
+</div>	
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div class="nav-btn">
+	<button id="prevBtn"><i class="fa fa-hand-o-left fa-2x"></i></button>
+	<button id="nextBtn"><i class="fa fa-hand-o-right fa-2x"></i></button>
+</div>	
+</div>	
+
+
+
+
+<div class="basicTab">
+<div id="header">
+	<h3> 삼성카드 쇼핑 (모바일앱) APP </h3>
+	<ul>
+		<li class="selected"><a href="#one"> Shop01 </a></li>
+		<li><a href="#two"> Shop02 </a></li>
+		<li><a href="#three"> Shop03 </a></li>
+		
+	</ul>
+</div>
+<div id="content">
+	<div id="one">
+		<img src="images/Shop01.png" alt="">
+		<p> 
+
+		</p>
+	</div>
+	<div id="two">
+		<img src="images/Shop02.png" alt="">
+		<p> 
+
+		</p>
+	</div>
+	<div id="three">
+		<img src="images/Shop03.png" alt="">
+		<p> 
+
+		</p>
+	</div>
+	
+ </div>
+ </div>
+
+
+</div>
+
+
+
+
+<!-- 같은 형제 요소 씨브링즈가 쌓여 원래는 p마지막이 보임 -->
+<p id="event" class="Eone"> &nbsp; event <b>1</b> > </p>
+<p id="event" class="Etwo"> &nbsp; event <b>2</b> > </p>
+<p id="event" class="Ethree"> &nbsp; event <b>3</b> > </p>
+<p id="event" class="Efour"> &nbsp; event <b>4</b> > </p>
+
+
+
+
+<div id="footer">
+	<p> 삼성카드 대표전화 1588-8700 카드신청 1688-1133
+	<br>
+        분실신고·한도승인 : 국내 1588-8900 / 해외 82-2-2000-8100, 800-1588-8700 </p>
+	<br>
+		<p> 대표이사 사장 <b>원기찬</b> 
+		<br>
+		    서울 중구 세종대로 67 (04514) 사업자등록번호 202-81-45602 /
+		    <br>
+			통신판매업 신고번호 제 2009-서울중구-1449호
+			<br>
+			<ins>© Samsung Card CO., LTD. All rights reserved.</ins>
+	</p>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.12.3.js"></script>
+<script>
+
+	$("#myBtn").click(function(){
+		$(".target").toggleClass("rotateY");
+	});
+
+	// rY 초기값 0으로 설정
+	var rY=0;
+
+	$("#myBtn2").click(function(){
+		// 버튼을 누를 때 마다 rY 값을 180 씩 증가 시키기 
+		rY += 180;
+		var value = "rotateY("+rY+"deg)"; /* "rotateY("+rY+"deg)" ("+증가숫자+" deg각도단위) */
+		$(".target").css("-webkit-transform", value);
+	});
+
+
+
+	var rY=0;
+
+	$("#prevBtn").click(function(){
+		rY += 90;
+		var value="translateZ(-200px) rotateY("+rY+"deg)";
+		$(".cube").css("-webkit-transform",value);
+	});
+
+	$("#nextBtn").click(function(){
+		rY -= 90;
+		var value="translateZ(-200px) rotateY("+rY+"deg)";
+		$(".cube").css("-webkit-transform",value);
+	});
+
+
+
+	$("#header a").click(function(){
+		//일단 selected 클래스를 제거한다음 
+		$("#header li").removeClass("selected");
+		//클릭한 a 요소의 부모요소(li) 에 selected 클래스를 추가 한다. 
+		$(this).parent().addClass("selected");
+
+		$("#content>div").hide();
+		var sel = $(this).attr("href");
+		$(sel).show();
+
+	});
+
+
+
+	$("p").click(function(){
+		$("this").hide();
+	});
+
+</script>	
+
+
+</body>
+</html>
