@@ -37,7 +37,7 @@ layout: post
 <br>
 <h3>개발 결과</h3>
 
-<a href="/assets/160605_semi_project/index.html" target="_blank">페이지 링크</a><br>
+<a href="/AcornProject01_160607" target="_blank">페이지 링크</a><br>
 <a href="/2015/06/05/Show-the-Local-Weather.html" target="_blank">날씨</a>
 
 칸투칸 : 기존의 데스크탑용 웹과 모바일용 웹이 분리되어있던 웹페이지 중 모바일 페이지를 모티브로 데스크탑용 반응형까지 지원하였다.
