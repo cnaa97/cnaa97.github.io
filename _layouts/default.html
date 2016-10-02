@@ -1,62 +1,64 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>Project. __ by Junho Park</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="/css/syntax.css">
-    <noscript>
-        <link rel="stylesheet" href="/css/skel.css" />
-        <link rel="stylesheet" href="/css/style.css" />
-        <link rel="stylesheet" href="/css/style-xlarge.css" />
-    </noscript>
-    <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-</head>
+{% include head.html %}
 
-<body id="top">
-    {{ content }}
-    <header id="header">
-        <a href="/" class="image avatar"><img src="/images/avatar.png" alt="" /></a>
-        <h1>Welcome! I am Junho Park.</h1>
-        <h1>I held a bachelor's degree in Spatial Design. Now, In order to solve my problem, I've studying about Web Front-End Develop. I'm interested in Interactive Design with web, Creative, Coding. I will post about my personal project, include Web development, Design, Idea.</h1>
-    </header>
-    <!-- Footer -->
-    <footer id="footer">
-        <ul class="copyright">
-            <li><strong style="color:#000">Project. __</strong></li>
-            <li><a href="/">Home</a></li>
-            <li><a href="/design_portfolio" target="_blank">Design Portfolio</a></li>
-            <li><a href="mailto:cnaa97@gmail.com">cnaa97@gmail.com</a></li>
-        </ul>
-        <ul class="icons">
-            {% if site.facebook_username %}
-            <li>
-                <a href="https://www.facebook.com/{{ site.facebook_username }}" class="icon fa-facebook" target="_blank">
-                    <span class="label">Facebook</span>
-                </a>
-            </li>
-            {% endif %} {% if site.linkedin_username %}
-            <li>
-                <a href="https://linkedin.com/in/{{ site.linkedin_username }}" class="icon fa-linkedin" target="_blank">
-                    <span class="label">LinkedIn</span>
-                </a>
-            </li>
-            {% endif %} {% if site.github_username %}
-            <li>
-                <a href="https://github.com/{{ site.github_username }}" class="icon fa-github" target="_blank">
-                    <span class="label">GitHub</span>
-                </a>
-            </li>
-            {% endif %}
-        </ul>
-    </footer>
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/jquery.poptrox.min.js"></script>
-    <script src="/js/skel.min.js"></script>
-    <script src="/js/init.js"></script>
+<body>
+    <div class="whole_wrapper">
+        <div class="menu">
+            <div class="context-menu">
+                <div class="menu-4" data-menu="4"></div>
+            </div>
+            <li class="nav-title-menu"><a href="/" class="menu-title">Project. _ Junho Park</a></li>
+        </div>
+        <div class="page-nav">
+            <ul>
+                <!-- Title -->
+                <li class="nav-title"><a href="/">Project. _ Junho Park</a></li>
+
+                <!-- Basic Menu -->
+                {% for post in site.categories.about %} {% if post.url %}
+                <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                {% endif %} {% endfor %}
+            </ul>
+
+            <!-- Menu 1 _ Front-end Project -->
+            <ul class="nav-categori">
+                <span>Front-end Project</span>
+                {% for post in site.categories.Front-end Project %} {% if post.url %}
+                <li class="nav-list"><a href="{{ post.url }}">{{ post.title }}</a></li>
+                {% endif %} {% endfor %}
+            </ul>
+
+            <!-- Menu 2 -->
+            <!--<ul class="nav-categori">
+                <span>menu1</span>
+                {% for post in site.categories.test1 %} {% if post.url %}
+                <li class="nav-list"><a href="{{ post.url }}">{{ post.title }}</a></li>
+                {% endif %} {% endfor %}
+            </ul>-->
+
+            <a href="#" class="menu-icon">
+              <svg viewBox="0 0 18 15">
+                <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+              </svg>
+            </a>
+
+            <ul class="page-nav-bottom">
+                <li class="nav-categori">Contact Me</li>
+                <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+                <li class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></li>
+            </ul>
+        </div>
+
+        <div class="page-content">
+            <div class="wrapper">
+                {{ content }}
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -1,30 +1,21 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
 # Site settings
-
-title: Junho Park # Title of your site
-email: cnaa97@gmail.com # Your contant email
-
+title: Project. __ Junho Park
+email: cnaa97@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-    I held a bachelor's degree in Spatial Design. 
-    Now, In order to solve my problem, I've studying about Web Front-End Develop. 
-    I'm interested in Interactive Design with web, Creative, Coding. 
-    I will post about my personal project, include Web development, Design, Idea.
-
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-
-# Social links.
-# Replace the word 'example' with your username if you want to include the icon in the left sidebar
-# Delete the word 'example' if you don't want to include the icon in the left sidebar
-
-twitter_username:     cnaa97  # Replace this with your Twitter username
-github_username:      cnaa97  # Replace this with your GitHub username
-linkedin_username:    cnaa97  # Replace this with your LinkedIn username
-google_plus_username: example  # Replace this with your Google+ username
-facebook_username:    cnaa97  # Replace this with your Facebook username
-dribbble_username:    example  # Replace this with your Dribbble username
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+twitter_username: jekyllrb
+github_username:  jekyll
 
 # Build settings
 markdown: kramdown
-# highlighter: pygments
-highlighter: rouge
-

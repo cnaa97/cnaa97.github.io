@@ -1,0 +1,46 @@
+---
+layout: post
+title:  "Markdown Syntax"
+date:   2016-10-01 17:20:00 +0900
+categories: Front-end Project
+---
+
+본 블로그에서 마크다운으로 글 쓰는 방법은 다음과 같다.
+
+<p class="break"></p>
+
+#### 강조
+
+글 강조에는 네 가지 방법이 있다.
+
+* \<i\>태그로 <i>글 강조하는 라인</i>
+* \_ 혹은 \* 두 개로 __글자 강조__ 
+* \<u\>태그로 일반적인 밑줄 
+* \_ 혹은 \* 하나로 _이렇게_ 
+
+<p class="break"></p>
+
+#### 링크
+
+[링크](http://cnaa97.github.io/) 
+
+<p class="break"></p>
+
+#### 줄바꿈
+
+{% highlight html %}
+<!-- break 클래스를 이용해서 줄을 바꾼다. -->
+<p class="break"></p>
+{% endhighlight %}
+
+<p class="break"></p>
+
+#### 코드
+
+{% highlight ruby %}
+def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=> prints 'Hi, Tom' to STDOUT.
+{% endhighlight %}
