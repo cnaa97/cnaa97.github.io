@@ -25,7 +25,7 @@ categories: vision
 
 코딩을 아주 조금 접하게 되니 디자인에 대한 시각이 변화하기 시작했다. 포토샵을 키면 포토샵 UI와 기능도 누군가의 프로그래밍일 것이라는 생각이 들었고, 작업하고 있는 캔버스 상의 결과물조차 프로그래밍 언어로 구현된 픽셀의 조합이라는 것으로 인식되었다. 내가 하는 디자인도 프로그래밍과 다른 점이 없었다. 예를 들자면 HTML API를 이용해 나만의 마크업 콘텐츠를 조합하는 것과 포토샵을 이용해 시각적 결과물을 만들어 내는데 차이가 없었다. 물론 목표와 결과는 다르지만 구현에 대한 원리는 같아 보였다. 
 
-<img src="https://lh3.googleusercontent.com/lx_DEQ8iLaosnUnoJ6hexVmaL7Fm8U1SYXJuSEEVqryt9koWd3srvukRQV4Q4jfTGxy_-vt3UWs=w538-h847-no" class="fit image">
+<img src="https://lh3.googleusercontent.com/-KbuiWPJz4kRfxmoBDeGjEH0zbEINhyuWHvuTNRuEPf8eDF21nKF0ZFtfpVYe9dC4CurbeXPDcg=w815-h537-no" class="fit image">
 
 <img src="https://lh3.googleusercontent.com/BCVT8fn-NidlnEkUiZ8jHjx8StwBJHRghaCZ9YYdc1pTSvqwUGgZs5JmJF7ZcC16TiW5m91pmuk=w1253-h939-no" class="fit image">
 
