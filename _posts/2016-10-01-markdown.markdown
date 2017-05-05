@@ -1,8 +1,9 @@
+{::comment}
 ---
 layout: post
 title:  "Markdown Syntax"
 date:   2016-10-01 17:20:00 +0900
-categories: Front-end Project
+categories: Front-end
 ---
 
 본 블로그에서 마크다운으로 글 쓰는 방법은 다음과 같다.
@@ -14,15 +15,15 @@ categories: Front-end Project
 글 강조에는 네 가지 방법이 있다.
 
 * \<i\>태그로 <i>글 강조하는 라인</i>
-* \_ 혹은 \* 두 개로 __글자 강조__ 
-* \<u\>태그로 일반적인 밑줄 
-* \_ 혹은 \* 하나로 _이렇게_ 
+* \_ 혹은 \* 두 개로 __글자 강조__
+* \<u\>태그로 일반적인 밑줄
+* \_ 혹은 \* 하나로 _이렇게_
 
 <p class="break"></p>
 
 #### 링크
 
-[링크](http://cnaa97.github.io/) 
+[링크](http://cnaa97.github.io/)
 
 <p class="break"></p>
 
@@ -44,3 +45,4 @@ end
 print_hi('Tom')
 #=> prints 'Hi, Tom' to STDOUT.
 {% endhighlight %}
+{:/comment}

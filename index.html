@@ -3,31 +3,39 @@ layout: default
 ---
 
 <div class="home">
-  <section>
-         
-         {% for post in site.categories.about limit:1 %} {% if post.url %}
-             <header class="major">
-                  <h2>{{ post.title }}</h2>
-                  <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}{% if post.author %} • {{ post.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-              </header>
 
-              <section>
-                  {{ post.content }}
-              </section>
-         {% endif %} {% endfor %}
-                
-         <!--       
-          {% for post in site.posts limit:1 %}
-              <header class="major">
-                  <h2>{{ post.title }}</h2>
-                  <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}{% if post.author %} • {{ post.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-              </header>
+    <h1 class="page-heading">Categories</h1>
 
-              <section>
-                  {{ post.content }}
-              </section>
-          {% endfor %}
-          -->
-  </section>
+    <div class="page-category">
+        {% assign categories = site.categories | sort %}
+        {% for category in categories %}
+            <span class="cateroty-item">
+                <a class="category-item-link" href="#{{ category | first | slugify }}">{{ category[0] | replace:'-', ' ' }} ({{ category | last | size }})</a>
+            </span>
+        {% endfor %}
+    </div>
 
+    <ul class="post-list">
+        {% for category in categories %}
+            <li>
+                <a name="{{ category | first | slugify }}"></a>
+
+                <h1 class="page-heading">{{ category[0] | replace:'-', ' ' }}</h1>
+
+                <!-- 제목 순 정렬하려면 아래 코드 주석 해제 -->
+                <!-- {% assign sorted_posts = site.posts | sort: 'title' %} -->
+                <!-- To sort, remove "reversed" below code -->
+                {% for post in sorted_posts reversed %}
+                    {%if post.categories contains category[0]%}
+                        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+                        <h3>
+                            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">{{ post.title }}</a>
+                        </h3>
+                    {%endif%}
+                {% endfor %}
+            </li>
+        {% endfor %}
+    </ul>
+    </div>
+    
 </div>

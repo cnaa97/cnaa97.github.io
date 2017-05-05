@@ -1,26 +1,20 @@
 ---
 layout: post
 title:  "Show The Local Weather"
-date:   2016-06-05 00:00:00 +0900
-categories: Front-end Project
+date:   2016-06-05
+categories: Project
 ---
 
-<img src="/assets/160605_01.png" class="fit image">
+<img src="/img/160605_01.png" class="fit image">
 
 ### 개요
 
 [Show The Local Weather](http://cnaa97.github.io/local_weather){:target="_blank"}은 Free Code Camp의 과제 중 하나로 날씨 정보를 제공하는 [웹페이지](http://cnaa97.github.io/local_weather){:target="_blank"}이다.
 
-먼저 자바스크립트의 navigator.geolocation 을 활용하여 클라이언트의 위도, 경도를 불러오고
-날씨 정보와 지역 이름을 긁어와 html 문서에 출력했다.
-
-<br>
-날씨와 위치정보는 아래 두 곳의 API에서 정보를 전달받았다.
+먼저 자바스크립트의 navigator.geolocation 을 활용하여 클라이언트의 위도, 경도를 불러오고 날씨 정보와 지역 이름을 긁어와 html 문서에 출력했다. 날씨와 위치정보는 아래 두 곳의 API를 이용했다.
 
  - 구글 지도 API
  - Open Weather Map API
-
-<br>
 
 ### Javascript
 
@@ -51,7 +45,7 @@ if (navigator.geolocation){
             // 현재 html 문서 내의 elements에 현재온도,최저,최고온도를 출력한다.
 
                 $("#temp").text(currentTemp);
-                $(".min").text(tempMin+"°C");                        
+                $(".min").text(tempMin+"°C");
                 $(".max").text(tempMax+"°C");
 
             // 온도에 따른 날씨 아이콘을 출력한다.
@@ -87,7 +81,7 @@ if (navigator.geolocation){
 
         });
     });
-}       
+}
 {% endhighlight %}
 
 자바스크립트 jQuery에서 getJSON 함수의 매개변수로 Open Weather Map을 url을 보내면 JSON 형식의 데이터를 전달받을 수 있다.

@@ -1,15 +1,14 @@
 ---
-layout: post_about
-title:  "About"
+layout: post
+title:  About
 date:   2016-09-10 00:00:00 +0900
-categories: about
+permalink: /about/
 ---
 Junho Park is a Front-end Developer and Designer living and working in Seoul, South Korea.
 
 Park held a bachelor's degree of Fine Arts, majored in Spatial Design at Kookmin University. Now, In order to solve his problem, He dive into the web. He had been studying about Web Front-End Develop. He is interested in Interactive Design with web, Creative, Coding.
 
 <br>
-
 
 {::comment}
 
@@ -25,4 +24,5 @@ Github에서 호스팅받아, jekyll을 커스터마이징하여 개인 프로�
 지킬을 이용해 가벼운 블로그를 개설했고, 내 프로젝트나 이야기를 공유하고자 한다. 내 심플노트 앱에는 못다한 프로젝트에 대한 아이디어가 너무나도 많다. 만들고 싶은 것도 해보고 싶은 것도 많다. 내가 해야 할 일은 가지고만 있지 말고 실제로 만들어보고 공유해서 피드백도 얻는 일들이 필요하다.
 
 다만 한 가지 아쉬운 점은 블로그의 UI 전체를 내가 직접 구현하지 못했다는 것이다. 최근 하고 있는 Front-end 개발 공부가 바빠 처음부터 구현하기엔 어려워 오픈소스 html5 템플릿을 커스터마이징했다. 이것 또한 불필요한 애니메이션이나 속도를 느리게 만드는 요소들을 찾아내서 없애고 싶었지만 워낙 코드의 양이 방대해서 쉽게 건들이지 못했다. 간단히 UI 요소를 수정하고 반응형에 맞게 CSS를 고쳤다.
+
 {:/comment}

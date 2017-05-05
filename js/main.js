@@ -1,15 +1,14 @@
 $(function () {
-    // 데스크탑 메뉴 토글
-    $(".page-nav > .nav-categori > span").click(function(){
-        $(this).parent().find("li").slideToggle(200);
+
+    /**
+    * smooth scroll
+    */
+    $('.category-item-link').click(function(){
+        console.log($.attr(this, 'href').substr(1));
+        $('html, body').animate({
+            scrollTop: $(`[name="${$.attr(this, 'href').substr(1)}"]`).offset().top - 16
+        }, 500);
+        return false;
     });
-    
-    // 모바일 메뉴 토글
-    var menu = $('.context-menu div');
-    menu.on('click', function () {
-        var menuNum = $(this).data('menu');
-        $(this).toggleClass('menu-' + menuNum + '-active');
-        $('.page-nav').slideToggle();
-        $('.page-content').toggle();
-    })
-})
+
+});

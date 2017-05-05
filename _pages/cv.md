@@ -1,24 +1,27 @@
 ---
-layout: post_about
-title:  "CV"
-date:   2016-09-09 00:00:00 +0900
-categories: about
+layout: page
+title: CV
+permalink: /cv/
 ---
 
 #### **JUNHO PARK**
 
-- [Blog](http://cnaa97.github.io)
-- [Facebook](http://www.behance.net/cnaa97){:target="_blank"}
-- [Github](http://www.github.com/cnaa97){:target="_blank"}
-- [Behance](http://www.behance.net/cnaa97){:target="_blank"}
+- [Blog](https://cnaa97.github.io)
+- [Facebook](https://www.facebook.com/cnaa97){:target="_blank"}
+- [Github](https://www.github.com/cnaa97){:target="_blank"}
+- [Behance](https://www.behance.net/cnaa97){:target="_blank"}
 
 <p class="break"></p>
 
 #### **EXPERIENCES**
 
-<u>SEP 2016 - Current</u> <br/>
-UI Developer | [BRUNT](http://brunt.co) <br/>
-Work as Front-developer. Coding web on Hybrid App.
+<u>NOV 2016 - Current</u> <br/>
+Front-End Developer | BankWareGlobal <br/>
+Working as Front-end developer. Mainly using React, Redux, Sass
+
+<u>SEP - OCT 2016</u> <br/>
+UI Developer | BRUNT <br/>
+Worked as UI developer. Coding web on Hybrid App.
 
 <u>JUL - DEC 2015</u> <br/>
 UX/UI Designer | SMATOOS.Inc <br/>
@@ -72,28 +75,28 @@ Java & Android Course<br/>
 
 #### **SKILLS & CERTIFICATIONS**
 
-<U>Language</U><br/>
+**Language**
 
-- Korean <br/>
+- Korean
 - English
 
-<U>Front-end Programming</U><br/>
+**Front-end Programming**
 
-- HTML/CSS, SASS, Bootstrap<br/>
-- Javascript ( jQuery, AngularJS, NodeJS, ReactJS )<br/>
+- HTML/CSS, SASS, Bootstrap
+- Javascript ( jQuery, AngularJS, NodeJS, ReactJS )
 - Python, Git, Ruby Sinatra
 
 
-<U>Graphic Software</U> <br/>
+**Graphic Software**
 
-- Adobe Photoshop, Illustrator, Premiere <br/>
-- Sketch3, Affinity Designer <br/>
+- Adobe Photoshop, Illustrator, Premiere
+- Sketch3, Affinity Designer
 - SketchUp, Rhino, keyShot, Auto Cad, 3D Max
 
 - Well versed in OSX and Window platforms. <br/>
 - Apple iWork, MS Office, Google Docs
 
-<u>Certificate</u> <br/>
+**Certificate**
 
 - Craftsman Computer Graphics Operation
 | 2007
@@ -113,10 +116,10 @@ Java & Android Course<br/>
 한국장애인인권포럼 (The Human Rights Forum Of Persons with Disabilities in Korea)
 
 <u>Korea Expressway Corporation, Student Advertising competition</u> (be selected) | 2012<br/>
-- 한국도로공사 (Korea Expressway Corporation)
+한국도로공사 (Korea Expressway Corporation)
 
 <u>2012 Seagate Hardbot Contest</u> (be selected) | 2012<br/>
-- Seagate Technology LLC
+Seagate Technology LLC
 
 <p class="break"></p>
 
