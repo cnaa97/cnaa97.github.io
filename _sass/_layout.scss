@@ -276,8 +276,18 @@
     }
 }
 
+/**
+ * Custom
+ */
+
 .break {
     display: block;
     height: 10px;
     margin: 0;
+}
+
+.mobile-only {
+    @include media-query($on-palm) {
+        display: none;
+    }
 }
