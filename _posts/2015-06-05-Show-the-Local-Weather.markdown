@@ -3,6 +3,7 @@ layout: post
 title:  "Show The Local Weather"
 date:   2016-06-05
 categories: Project
+comments: true
 ---
 
 <img src="/img/160605_01.png" class="fit image">

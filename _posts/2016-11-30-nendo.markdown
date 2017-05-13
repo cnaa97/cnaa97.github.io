@@ -3,6 +3,7 @@ layout: post
 title:  "넨도"
 date:   2016-11-30
 categories: Design
+comments: true
 ---
 
 '넨도 디자인 이야기'를 읽고 떠오르는 생각

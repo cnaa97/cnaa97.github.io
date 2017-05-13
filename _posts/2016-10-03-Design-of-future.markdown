@@ -3,6 +3,7 @@ layout: post
 title:  "디자인적 비전"
 date:   2017-05-05
 categories: Vision
+comments: true
 ---
 
 ### **디자인에 대한 고민**
