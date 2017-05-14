@@ -6,6 +6,11 @@
     transition: all .2s;
 }
 
+@include text-selection-color {
+    background: #FDFF86;
+    color: #363636;
+};
+
 /**
  * Site header
  */

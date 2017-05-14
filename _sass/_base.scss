@@ -37,34 +37,6 @@ ul, ol, dl, figure,
     margin-bottom: $spacing-unit / 2;
 }
 
-h1::selection,
-h1::-moz-selection,
-h2::selection,
-h2::-moz-selection,
-h3::selection,
-h3::-moz-selection,
-h4::selection,
-h4::-moz-selection,
-h5::selection,
-h5::-moz-selection,
-h6::selection,
-h6::-moz-selection,
-p::selection,
-p::-moz-selection,
-ul::selection,
-ul::-moz-selection,
-ol::selection,
-ol::-moz-selection,
-dl::selection,
-dl::-moz-selection,
-figure::selection,
-figure::-moz-selection,
-blockquote::selection
-blockquote::-moz-selection {
-    background: #FDFF86;
-    color: #363636;
-}
-
 p {
     line-height: 1.7em;
 }

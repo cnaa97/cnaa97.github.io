@@ -11,3 +11,11 @@
         @content;
     }
 }
+
+@mixin text-selection-color {
+    ::selection { @content; } /*** Works on common browsers ***/
+    ::-moz-selection { @content; } /*** Mozilla based browsers ***/
+    ::-o-selection { @content; } /***For Other Browsers ***/
+    ::-ms-selection { @content; }
+    ::-webkit-selection { @content; } /*** For Webkit ***/
+}
