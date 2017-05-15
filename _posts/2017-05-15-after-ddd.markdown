@@ -2,7 +2,7 @@
 layout: post
 title:  "3D 프린팅 창업 후기"
 date:   2017-05-15
-categories: Design
+categories: Start-Up
 comments: true
 ---
 
