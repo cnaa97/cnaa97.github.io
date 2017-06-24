@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<div>
+    <div class="category-page-wrapper">
+        <h3>{{ page.category | capitalize }}</h3>
+    </div>
+
+    {% for category in site.categories %}
+        {% assign currentCategory = category | first | slugify %}
+        {% if currentCategory == page.category %}
+            <ul class="post-list">
+                {% for posts in category %}
+                    {% for post in posts %}
+                        {% if post.url %}
+                            <li class="post-custom-wrapper">
+                                {% if post.img %}
+                                <div class="page-list-image yes-image">
+                                  <img src="{{site.baseurl}}/public/img/{{post.img}}" alt="{{post.title}}">
+                                </div>
+                                {% else %}
+                                  <div class="page-list-image no-image"></div>
+                                {% endif %}
+
+                                <div class="page-list-content">
+                                    <h3>
+                                        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                                    </h3>
+                                    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+                                    <a href="{{ site.baseurl }}/category/{{ currentCategory }}" class="page-list-category">{{ post.category | replace:'-', ' ' }}</a>
+                                </div>
+                                <div class="page-list-shadow"></div>
+                            </li>
+                        {%endif%}
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        {%endif%}
+    {% endfor %}
+</div>

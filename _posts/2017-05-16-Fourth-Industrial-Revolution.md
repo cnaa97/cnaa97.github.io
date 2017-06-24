@@ -2,7 +2,7 @@
 layout: post
 title:  "4차 산업혁명"
 date:   2017-05-17
-categories: Tech
+category: Tech
 comments: true
 ---
 

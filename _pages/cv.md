@@ -1,10 +1,10 @@
 ---
 layout: page
 title: CV
-permalink: /cv/
+permalink: /cv
 ---
 
-#### **JUNHO PARK**
+#### About **JUNHO PARK**
 
 - [Blog](https://cnaa97.github.io)
 - [Facebook](https://www.facebook.com/cnaa97){:target="_blank"}

@@ -2,7 +2,7 @@
 layout: post
 title:  "Show The Local Weather"
 date:   2016-06-05
-categories: Project
+category: Project
 comments: true
 ---
 

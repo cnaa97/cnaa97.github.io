@@ -7,15 +7,77 @@
 // }
 
 @mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin media-query-min($device) {
+  @media screen and (min-width: $device) {
+    @content;
+  }
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  box-shadow: $shadow;
 }
 
 @mixin text-selection-color {
-    ::selection { @content; } /*** Works on common browsers ***/
-    ::-moz-selection { @content; } /*** Mozilla based browsers ***/
-    ::-o-selection { @content; } /***For Other Browsers ***/
-    ::-ms-selection { @content; }
-    ::-webkit-selection { @content; } /*** For Webkit ***/
+  ::selection {
+    @content;
+  }
+  /*** Works on common browsers ***/
+  ::-moz-selection {
+    @content;
+  }
+  /*** Mozilla based browsers ***/
+  ::-o-selection {
+    @content;
+  }
+  /***For Other Browsers ***/
+  ::-ms-selection {
+    @content;
+  }
+  ::-webkit-selection {
+    @content;
+  }
+  /*** For Webkit ***/
+}
+
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin slide-up {
+  max-height: 0;
+  overflow-y: hidden;
+  -webkit-transition: max-height 0.3s ease-in-out;
+  -moz-transition: max-height 0.3s ease-in-out;
+  -o-transition: max-height 0.3s ease-in-out;
+  transition: max-height 0.3s ease-in-out;
+}
+
+@mixin slide-down {
+  max-height: 100vh;
 }

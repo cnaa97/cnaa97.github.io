@@ -2,41 +2,12 @@
 layout: default
 ---
 
-<div class="home">
-
-    <h1 class="page-heading">Categories</h1>
-
-    <div class="page-category">
-        {% assign categories = site.categories | sort %}
-        {% for category in categories %}
-            <span class="cateroty-item">
-                <a class="category-item-link" href="#{{ category | first | slugify }}">{{ category[0] | replace:'-', ' ' }} ({{ category | last | size }})</a>
-            </span>
-        {% endfor %}
-    </div>
-
-    <ul class="post-list">
-        {% for category in categories %}
-            <li>
-                <a name="{{ category | first | slugify }}"></a>
-
-                <h1 class="page-heading">{{ category[0] | replace:'-', ' ' }}</h1>
-
-                <!-- 제목 순 정렬하려면 아래 코드 주석 해제 -->
-                <!-- {% assign sorted_posts = site.posts | sort: 'title' %} -->
-                <!-- To sort, remove "reversed" below code -->
-                {% for post in sorted_posts reversed %}
-                    {%if post.categories contains category[0]%}
-                        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-                        <h3>
-                            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">{{ post.title }}</a>
-                        </h3>
-                    {%endif%}
-                {% endfor %}
-            </li>
-        {% endfor %}
-    </ul>
-    </div>
-
+<div class="categories-wrapper">
+    {% include categories.html %}
 </div>
+
+<div class="main-post-wrapper">
+    {% include posts-pagination.html %}
+</div>
+
 <script id="dsq-count-scr" src="//cnaa97.disqus.com/count.js" async></script>

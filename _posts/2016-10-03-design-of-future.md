@@ -2,7 +2,7 @@
 layout: post
 title:  "디자인적 비전"
 date:   2017-05-05
-categories: Vision
+category: Vision
 comments: true
 ---
 

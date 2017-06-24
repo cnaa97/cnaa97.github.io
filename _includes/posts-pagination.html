@@ -1,0 +1,53 @@
+<!-- Posts by Pagination -->
+<ul class="post-list">
+    {% for post in paginator.posts %}
+    {% assign currentCategory = post.category | slugify %}
+        <li class="post-custom-wrapper">
+            {% if post.img %}
+                <div class="page-list-image yes-image">
+                    <img src="{{site.baseurl}}/public/img/{{post.img}}" alt="{{post.title}}">
+                </div>
+            {% else %}
+                <div class="page-list-image no-image"></div>
+            {% endif %}
+            <div class="page-list-content">
+                <!--<a name="{{ category | first | slugify }}"></a>-->
+                <h3>
+                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                </h3>
+                <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+                <a href="{{ site.baseurl }}/category/{{ currentCategory }}" class="page-list-category">{{ post.category | replace:'-', ' ' }}</a>
+            </div>
+            <div class="page-list-shadow"></div>
+        </li>
+    {% endfor %}
+</ul>
+
+<!-- Pagination links -->
+{% if paginator.total_pages > 1 %}
+    <div class="pagination">
+
+        {% if paginator.previous_page %}
+            <a class="btn-base btn-arrow btn-prev-next-active" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{% include btn-prev.svg %}</a>
+        {% else %}
+            <span class="btn-base btn-arrow btn-prev-next-not-active">{% include btn-prev.svg %}</span>
+        {% endif %}
+
+        {% for page in (1..paginator.total_pages) %}
+            {% if page == paginator.page %}
+                <span class="btn-base btn-page btn-page-active">{{ page }}</span>
+                {% elsif page == 1 %}
+                <a class="btn-base btn-page btn-page-not-active" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+                {% else %}
+                <a class="btn-base btn-page btn-page-not-active" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if paginator.next_page %}
+            <a class="btn-base btn-arrow btn-prev-next-active"href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">{% include btn-next.svg %}</a>
+        {% else %}
+            <span class="btn-base btn-arrow btn-prev-next-not-active">{% include btn-next.svg %}</span>
+        {% endif %}
+
+    </div>
+{% endif %}

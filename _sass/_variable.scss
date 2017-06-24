@@ -1,16 +1,20 @@
 // variables
 
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-family: "Noto Sans Korean", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
-$spacing-unit:     30px;
+$spacing-unit:     60px;
+$spacing-syntax:   30px;
 
 $text-color:       #111;
 $background-color: #fdfdfd;
 $brand-color:      #3790FF;
+
+$color-first:      #F5174E;
+$color-second:     #4C1CE4;
 
 $color-white:      #fff;
 
