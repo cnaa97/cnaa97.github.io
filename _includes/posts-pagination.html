@@ -1,5 +1,5 @@
 <!-- Posts by Pagination -->
-<ul class="post-list">
+<ul class="post-list grid effect-2" id="grid">
     {% for post in paginator.posts %}
     {% assign currentCategory = post.category | slugify %}
         <li class="post-custom-wrapper">
@@ -51,3 +51,15 @@
 
     </div>
 {% endif %}
+
+<script src="/public/js/libs/masonry.pkgd.min.js"></script>
+<script src="/public/js/libs/imagesloaded.js"></script>
+<script src="/public/js/libs/classie.js"></script>
+<script src="/public/js/libs/AnimOnScroll.js"></script>
+<script>
+    new AnimOnScroll( document.getElementById( 'grid' ), {
+        minDuration : 0.4,
+        maxDuration : 0.7,
+        viewportFactor : 0.3
+    } );
+</script>
