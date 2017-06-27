@@ -136,6 +136,7 @@
           left: 50%;
           @include transform(translate(-50%, -50%));
           padding-bottom: 80px;
+          margin-top: -20px;
           .trigger-pages-wrapper {
           }
           .trigger-categories-wrapper {
