@@ -1,22 +1,28 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>
-      {% if page.title %}
-          {{ page.title | escape }} : {{ site.title | escape }}
-      {% else %}
-          {{ site.title | escape }}
-      {% endif %}
-  </title>
+    <meta property="og:title" content="Project. __ Junho Park">
+    <meta property="og:description" content="Design / Vision / Coding">
+    <meta property="og:site_name" content="Project. __ Junho Park">
+    <meta property="og:url" content="cnaa97.github.io">
+    <meta property="og:image" content="{{site.baseurl}}/public/img/graph.png">
 
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <title>
+        {% if page.title %}
+        {{ page.title | escape }} : {{ site.title | escape }}
+        {% else %}
+        {{ site.title | escape }}
+        {% endif %}
+    </title>
 
-  <link rel="stylesheet" href="{{ '/public/style/main.css' | prepend: site.baseurl }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-  <!--<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>-->
-  <script src="/public/js/libs/modernizr.custom.js"></script>
-  <script src="/public/js/main.js"></script>
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+    <link rel="stylesheet" href="{{ '/public/style/main.css' | prepend: site.baseurl }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+    <!--<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>-->
+    <script src="/public/js/libs/modernizr.custom.js"></script>
+    <script src="/public/js/main.js"></script>
 </head>
