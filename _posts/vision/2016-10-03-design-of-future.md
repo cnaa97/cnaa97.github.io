@@ -4,7 +4,7 @@ title:  "디자인적 비전"
 date:   2017-05-05
 category: Vision
 comments: true
-permalink: /vision/2017/05/05/Design-of-future
+permalink: /vision/2017/05/05/Design-of-future.html
 ---
 
 ### **디자인에 대한 고민**
