@@ -113,6 +113,10 @@ blockquote {
   letter-spacing: -1px;
   font-style: italic;
 
+  margin-top: 22px;
+  margin-bottom: 16px;
+  font-weight: 300;
+
   > :last-child {
     margin-bottom: 0;
   }
@@ -179,4 +183,14 @@ pre {
       fill: $grey-color;
     }
   }
+}
+
+/*
+iframe
+*/
+iframe {
+  width: 100%;
+  min-height: 800px; // option
+  border: 1px solid #eee;
+  margin: 12px 0;
 }
