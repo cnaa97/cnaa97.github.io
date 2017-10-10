@@ -642,6 +642,8 @@
 
   @include media-query($on-palm) {
     margin-top: 16px;
+    padding-left: 14px;
+    padding-right: 14px;
 
     .pagination {
       margin-top: 60px;
