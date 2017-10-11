@@ -550,7 +550,11 @@
  * Posts
  */
 .post-header {
-  margin-bottom: $spacing-unit;
+  margin-bottom: 40px;
+  
+  @include media-query($on-palm) {
+    margin-bottom: 35px;
+  }
 }
 
 .post-title {
