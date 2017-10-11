@@ -197,7 +197,10 @@ iframe
 */
 iframe {
   width: 100%;
-  min-height: 1000px; // option
   border: 1px solid #eee;
   margin: 12px 0;
+
+  &.docs {
+    min-height: 1000px; // option
+  }
 }
