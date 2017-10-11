@@ -15,4 +15,4 @@ comments: true
 
 <p class="break"></p>
 
-<iframe src="https://docs.google.com/document/d/e/2PACX-1vTHP1RdbLNN5rGZl4vNU1Rivx6N6twZhrkf2C1g8ixzMQJnDEQw-5stBZ22pqfPJAMR6mZXpwtblb8Q/pub?embedded=true"></iframe>
+<iframe class="docs" src="https://docs.google.com/document/d/e/2PACX-1vTHP1RdbLNN5rGZl4vNU1Rivx6N6twZhrkf2C1g8ixzMQJnDEQw-5stBZ22pqfPJAMR6mZXpwtblb8Q/pub?embedded=true"></iframe>

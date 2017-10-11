@@ -31,4 +31,4 @@ comments: true
 
 <p class="break"></p>
 
-<iframe src="https://docs.google.com/document/d/e/2PACX-1vRvwJcW29f7W5uWvmjPWY8Gh1dZS4UTz2uIFUkR8ceY2F6JSQ70jLpsDWSNfDsJ9ludScOd1a7eZlQ6/pub?embedded=true"></iframe>
+<iframe class="docs" src="https://docs.google.com/document/d/e/2PACX-1vRvwJcW29f7W5uWvmjPWY8Gh1dZS4UTz2uIFUkR8ceY2F6JSQ70jLpsDWSNfDsJ9ludScOd1a7eZlQ6/pub?embedded=true"></iframe>
