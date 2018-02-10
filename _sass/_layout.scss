@@ -396,7 +396,7 @@
 
   @include media-query($on-palm) {
     > li {
-      margin-bottom: 34px;
+      margin-bottom: 28px;
     }
   }
 
@@ -410,6 +410,10 @@
     right: 0;
 
     .page-list-image {
+      // @180211 - 좌측 사각형 박스 삭제
+      display: none;
+
+
       position: absolute;
       width: 180px;
       height: 100%;
@@ -438,15 +442,26 @@
 
     .page-list-content {
       position: absolute;
-      left: 180px;
-      width: calc(100% - 180px);
-      padding-left: 24px;
+      padding-left: 18px;
       top: 50%;
+
+      // @180211 - 좌측 사각형 박스 적용
+      // left: 180px;
+      // width: calc(100% - 180px);
+      
+      // @180211 - 좌측 사각형 박스 삭제
+      width: calc(100% - 90px);
+      left: 20px;
+      
       @include transform(translateY(-50%));
 
       h3 {
         display: inline-block;
-        width: 90%;
+        
+        // @180211 - 좌측 사각형 박스 삭제
+        // width: 90%;
+        width: 100%;
+
         margin-bottom: 0;
         padding-top: 0;
 
@@ -505,7 +520,8 @@
       margin-left: auto;
       margin-right: auto;
       z-index: -1;
-      @include shadow(0 24px 65px -20px rgba(0, 0, 0, .35));
+      @include shadow(0 10px 60px -18px rgba(0, 0, 0, 0.35));
+      // @include shadow(0 24px 65px -20px rgba(0, 0, 0, .35));
     }
   }
 
@@ -515,7 +531,11 @@
 
     .post-custom-wrapper {
       width: 100%;
-      height: 340px;
+      height: 150px;
+
+      // @180211 - 좌측 사각형 박스 삭제
+      // height: 340px;
+
       .page-list-image {
         width: 100%;
         height: 56%;
@@ -527,14 +547,19 @@
 
       .page-list-content {
         width: 94%;
-        top: 56%;
         height: 44%;
         left: 0;
         padding-left: 6%;
+
+        // @180211 - 좌측 사각형 박스 삭제
+        // top: 56%;
+        top: 0;
+
         @include transform(translateY(0));
         h3 {
-          margin-top: 20px;
+          margin-top: 22px;
           .post-link {
+            width: 92%;
           }
         }
         .post-meta {
@@ -563,13 +588,15 @@
   line-height: 1;
 
   @include media-query($on-laptop) {
-    font-size: 36px;
+    font-size: 32px;
+    line-height: 1.4em;
+    word-break: keep-all;
   }
 }
 
 .post {
   @include media-query($on-palm) {
-    margin-top: 40px;
+    
   }
 }
 
@@ -650,7 +677,7 @@
     padding-right: 14px;
 
     .pagination {
-      margin-top: 60px;
+      margin-top: 30px;
     }
   }
 }
