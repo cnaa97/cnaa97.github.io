@@ -6,7 +6,7 @@ permalink: /cv
 
 #### About **JUNHO PARK**
 
-- [Blog](/)
+- [Blog (HERE)](/)
 - [Facebook](https://www.facebook.com/cnaa97){:target="_blank"}
 - [Github](https://www.github.com/cnaa97){:target="_blank"}
 - [Behance](https://www.behance.net/cnaa97){:target="_blank"}
@@ -15,7 +15,7 @@ permalink: /cv
 
 #### **EXPERIENCES**
 
-<u>NOV 2016 - Current</u> <br/>
+<u>NOV 2016 - FEB 2018</u> <br/>
 Front-End Developer | BankWareGlobal <br/>
 Working as Front-end developer. Mainly using React, Redux, Sass
 
