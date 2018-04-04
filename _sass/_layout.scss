@@ -575,7 +575,7 @@
  * Posts
  */
 .post-header {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   
   @include media-query($on-palm) {
     margin-bottom: 35px;
@@ -603,8 +603,8 @@
 .post-content {
   margin-bottom: $spacing-unit;
 
-  ul li { list-style: circle; }
-  ol li { list-style: decimal; }
+  ul > li { list-style: circle; }
+  ol > li { list-style: decimal; }
 
   h2 {
     font-size: 32px;

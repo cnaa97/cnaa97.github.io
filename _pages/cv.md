@@ -6,7 +6,7 @@ permalink: /cv
 
 #### About **JUNHO PARK**
 
-- [Blog (HERE)](/)
+- [LinkedIn](https://linkedin.com/in/cnaa97){:target="_blank"}
 - [Facebook](https://www.facebook.com/cnaa97){:target="_blank"}
 - [Github](https://www.github.com/cnaa97){:target="_blank"}
 - [Behance](https://www.behance.net/cnaa97){:target="_blank"}
