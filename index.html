@@ -10,4 +10,6 @@ layout: default
     {% include posts-pagination.html %}
 </div>
 
-<script id="dsq-count-scr" src="//cnaa97.disqus.com/count.js" async></script>
+{% if jekyll.environment == 'production' %}
+    <script id="dsq-count-scr" src="//cnaa97.disqus.com/count.js" async></script>
+{% endif %}
