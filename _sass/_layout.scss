@@ -819,18 +819,14 @@
   }
 }
 
-/**/
-
-.grid {}
-
 .grid li {
-	opacity: 0;
+	// opacity: 0;
 }
 
 .grid li.shown,
 .no-js .grid li,
 .no-cssanimations .grid li {
-	opacity: 1;
+	// opacity: 1;
 }
 
 /* Effect 2: Move Up */

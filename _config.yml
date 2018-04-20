@@ -20,6 +20,6 @@ markdown: kramdown
 
 plugins:
   - jekyll-paginate
-paginate: 6
+paginate: 10
 
 include: ['_pages']
