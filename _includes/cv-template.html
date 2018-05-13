@@ -1,0 +1,204 @@
+<style>
+    .wrapper-content { max-width: 600px; }
+    .post-header { display: none; }
+    .page-content { padding: 10px 0 80px; }
+</style>
+
+
+<div class="cv-wrapper">
+    <section class="section-common">
+        <div class="name">{{ site.data[page.lang].cv.name }}</div>
+        <div class="roll">
+            <span>{{ site.data[page.lang].cv.roll }}</span>
+            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <span>{{ site.data[page.lang].cv.loc }}</span>
+        </div>
+        <ul class="social">
+            <li><a href="{{ site.github }}" target="_blank">{{ site.data[page.lang].common.github }}</a></li>
+            <li><a href="{{ site.linkedIn }}" target="_blank">{{ site.data[page.lang].common.linkedin }}</a></li>
+            <li><a href="mailto:{{ site.email }}" target="_blank">{{ site.data[page.lang].common.email }}</a></li>
+            {% if page.lang == "ko" %}
+            <li><a href="/cv-en">{{ site.data[page.lang].common.cv_lang }}</a></li>
+            {% else %}
+            <li><a href="/cv">{{ site.data[page.lang].common.cv_lang }}</a></li>
+            {% endif %}
+        </ul>
+
+        <figure class="profile-image">
+            <img src="/public/img/profile.jpg" alt="">
+        </figure>
+    </section>
+
+
+    <div class="slogan-wrap">
+        <div class="slogan">{{ site.data[page.lang].cv.slogan }}</div>
+    </div>
+
+    <div class="section-timeline">
+
+        <div class="flow-line"></div>
+        <div class="line">
+
+            {% for item in site.data[page.lang]["cv"]["timeline"] %}
+                {% if item.year %}
+                    <div class="year">{{ item.year }}</div>
+                {% else %}
+                    <ul class="items-wrap">
+                        <li>
+                            <h4>
+                                {% if item.link %}
+                                    <a href="{{ item.link }}">{{ item.title }}</a>
+                                {% else %}
+                                    {{ item.title }}
+                                {% endif %}
+                            </h4>
+                            <ul class="tags-wrap">
+                                {% for tag in item.tag %}
+                                <li>{{ tag }}</li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    </ul>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="flow-line bottom"></div>
+    </div>
+
+
+    <!-- 프로젝트 -->
+    <section class="section-content">
+        <h3 class="title">{{ site.data[page.lang].cv.menu.project }}</h3>
+        <ul>
+            {% for item in site.data[page.lang]["cv"]["project"] %}
+                <li>
+                    <div class="top">
+                        <div class="sub-title">
+                            {% if item.link %}
+                                <a href="{{ item.link }}">{{ item.title }}</a>
+                            {% else %}
+                                {{ item.title }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="term">{{ item.term }}</div>
+                    <p class="short">
+                        {{ item.desc1 }}
+                    </p>
+                    <p class="long">
+                        {{ item.desc2 }}
+                    </p>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+
+    <!-- 경력 -->
+    <section class="section-content exp">
+        <h3 class="title">{{ site.data[page.lang].cv.menu.exp }}</h3>
+        <ul>
+            {% for item in site.data[page.lang]["cv"]["exp"] %}
+                <li id="{{ item.id }}">
+                    <div class="top">
+                        <div class="sub-title">{{ item.title }}</div>
+                        <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        <div class="sub-roll">{{ item.roll }}</div>
+                    </div>
+                    <div class="term">{{ item.term }}</div>
+                    <p class="short">
+                        {{ item.desc1 }}
+                    </p>
+                    <p class="long">
+                        {{ item.desc2 }}
+                    </p>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+
+
+    <!-- 학력 -->
+    <section class="section-content">
+        <h3 class="title">{{ site.data[page.lang].cv.menu.edu }}</h3>
+        <ul>
+            {% for item in site.data[page.lang]["cv"]["edu"] %}
+                <li>
+                    <div class="top">
+                        <div class="sub-title">{{ item.title }}</div>
+                        <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        <div class="sub-roll major">{{ item.major }}</div>
+                    </div>
+                    <div class="term">{{ item.term }}</div>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+
+    <!-- 수상실적 -->
+    <section class="section-content">
+        <h3 class="title">{{ site.data[page.lang].cv.menu.award }}</h3>
+        <ul>
+            {% for item in site.data[page.lang]["cv"]["award"] %}
+                <li>
+                    <div class="top">
+                        <div class="sub-title">{{ item.title }}</div>
+                        <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        <div class="sub-roll">{{ item.loc }}</div>
+                    </div>
+                    <div class="term">{{ item.date }}</div>
+                    <p class="short">
+                        {{ item.desc }}
+                    </p>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+
+
+
+
+    {% comment %}
+    {% endcomment %}
+
+    <div class="popup-bottom">
+        <div class="label">{{ site.data[page.lang].cv.findJobLabel }}</div>
+        <div class="close">{{ site.data[page.lang].btn.close }}</div>
+    </div>
+    
+    
+    
+
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+    var $root = $('html body');
+
+    // 팝업 처리
+    var $popupBottom = $('.popup-bottom');
+    var popupTriggerClassNs = 'pop';
+    var neverShowPopup = false;
+
+    $(window).on('scroll', function () {
+        if (!neverShowPopup) {
+            var scrollTop = $(this).scrollTop();
+            
+            if (scrollTop && scrollTop > 100 && scrollTop < 1700) {
+                !$popupBottom.hasClass(popupTriggerClassNs) && $popupBottom.addClass(popupTriggerClassNs);
+            } else if (scrollTop < 100 || scrollTop > 1600) {
+                $popupBottom.hasClass(popupTriggerClassNs) && $popupBottom.removeClass(popupTriggerClassNs);
+            }
+        }
+    });
+
+    // 팝업 닫기 버튼 처리
+    $('.popup-bottom > .close').click(function(){
+        neverShowPopup = true;
+        $popupBottom.removeClass(popupTriggerClassNs);
+    });
+
+</script>

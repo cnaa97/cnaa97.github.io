@@ -30,7 +30,6 @@ languages: ["ko", "en"]
 # Plugins
 plugins:
   - jekyll-paginate
-  - jekyll-multiple-languages-plugin
 paginate: 10
 
 include: ['_pages']

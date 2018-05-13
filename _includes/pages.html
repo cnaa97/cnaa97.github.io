@@ -3,6 +3,7 @@
     {% endcomment %}
 
     {% for my_page in site.pages %}
+    <!-- 일단 cv 만 출력 -->
     {% if my_page.title == 'CV' %}
     <li>
         <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
@@ -10,14 +11,10 @@
     {% endif %}
     {% endfor %}
     
-    
-    <li class="btn-lang">
-        {% if site.lang == "ko" %}
-            {% capture link1 %}{{ site.baseurl_root }}en{{ page.url}}{% endcapture %}
-            <a href="{{ link1 }}">{% t global.en %}</a>
-        {% elsif site.lang == "en" %}
-            {% capture link2 %}{{ site.baseurl_root }}{{ page.url  }}{% endcapture %}
-            <a href="{{ link2 }}">{% t global.ko %}</a>
-        {% endif %}
-    </li>
+
+    {% comment %}
+        <li class="btn-lang">
+            <a href="{{ link1 }}">en</a>
+        </li>
+    {% endcomment %}
 </ul>
