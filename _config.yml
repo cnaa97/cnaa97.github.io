@@ -7,7 +7,9 @@ description: > # this means to ignore newlines until "baseurl:"
   Junho Park is a Front-end Developer and Designer living and working in Seoul, South Korea.
   Park held a bachelor’s degree of Fine Arts, majored in Spatial Design.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://junojunho.com" # the base hostname & protocol for your site http://yourdomain.com
+url: "https://junojunho.com"
+linkedIn: "https://www.linkedin.com/in/cnaa97"
+github: "https://github.com/cnaa97"
 
 # Permalinks
 permalink: /:categories/:title
@@ -17,9 +19,18 @@ github_username:  cnaa97
 
 # Build settings
 markdown: kramdown
+assets:
+  compress:
+    - css: true
+    - js: true
 
+# Language
+languages: ["ko", "en"]
+
+# Plugins
 plugins:
   - jekyll-paginate
+  - jekyll-multiple-languages-plugin
 paginate: 10
 
 include: ['_pages']

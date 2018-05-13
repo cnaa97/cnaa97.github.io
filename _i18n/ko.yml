@@ -1,0 +1,111 @@
+global:
+  ko: Ko
+  en: En
+common:
+  github: 깃허브
+  linkedin: 링크드인
+  email: 이메일
+  cv_lang: CV (EN)
+btn:
+  close: 닫기
+cv:
+  name: 박준호
+  roll: 프론트엔드 개발자
+  loc: 서울
+  findJobLabel: 현재 구직 중!
+  menu:
+    exp: 경력
+    edu: 학력
+    project: 프로젝트
+    award: 수상
+    teach: 강의
+    skill: 기술
+    cert: 자격
+    exhib: 전시
+  slogan: 성장에 대한 끊임 없는 욕구<br>문제를 먼저 정의하는 서비스 개발
+  timeline:
+    - title: 회사 포트폴리오 홈페이지 풀스택 개발
+      link: '#commoners'
+      tag: 
+        - react (nextJS)
+        - nodeJS
+        - express
+        - mongodb
+        - AWS
+    - year: '2018'
+    - title: 웹 기반 하이브리드앱 SPA 개발
+      link: '#farota'
+      tag: 
+        - react
+        - redux
+        - jquery
+    - title: 리액트 기반 SPA 개발
+      link: '#bwg'
+      tag: 
+        - react
+        - redux
+        - sass
+        - webpack
+        - jest
+        - svg
+        - enzyme
+        - jquery
+    - year: '2017'
+
+  exp:
+    - id: bwg
+      title: 뱅크웨어글로벌
+      roll: 프론트엔드 개발자
+      term: '2016.11 - 2018.02'
+      desc1: React, Redux 기반 SPA 개발
+      desc2: 뱅크웨어글로벌 연구소에서 프론트엔드 팀에 속하여 일했습니다. React 기반의 기업용 소프트웨어의 화면을 개발했으며, SI 프로젝트의 프론트엔드를 맡기도 했습니다. <br> 주로 React를 다루며, 컴포넌트를 만들어 Jest, Enzyme 으로 테스트까지 다루었습니다. 오픈소스 기반 컴포넌트에서 버그를 찾아 풀리퀘스트 했던 경험도 있으며, nodeJS를 이용해 간단한 SVG 아이콘 관리 툴도 개발했습니다.
+    - id: 
+      title: 스마투스
+      roll: UX/UI 디자이너
+      term: '2015.07 - 2015.12'
+      desc1: 웹, 모바일 UX/UI 디자인, 그래픽 디자인, 퍼블리싱 (HTML, CSS)
+      desc2: 스마투스에서 UI 디자이너로 일을 했습니다. 영어 교육 플랫폼인 비네이티브 프로 웹/앱 UI 작업에 참여했으며, 마케팅 리소스를 디자인하기도 했습니다. 신규 서비스 웹페이지를 퍼블리싱하여 프로토타이핑 했습니다.
+  project:
+    - id: commoners
+      title: 포트폴리오/블로그 홈페이지 풀스택 개발
+      term: '2018.03 - 2018.04'
+      desc1: NextJS (React), Express, MongoDB 사용자 및 관리자 페이지 개발
+      desc2: 디자인 스튜디오 commoners의 사용자 및 관리자용 <a href="https://commoners.co.kr" target="_blank">홈페이지</a>입니다. 프론트엔드는 NextJS(React) 기반이며, AWS의 E2C, S3, Router53 등을 활용하며 서버를 구축했습니다. 서버는 nginx 위에 express가 구동되며, 데이터베이스는 mongoose(mongodb)가 사용되었습니다.
+    - id: fatora
+      title: 웹 기반 하이브리드앱 SPA 개발
+      term: '2017.01 - 2017.10'
+      desc1: 농업 AI 제품 파로타의 <a href="https://play.google.com/store/apps/details?id=com.farota.console.android" target="_blank">안드로이드 앱</a> 하이브리드로 개발
+      desc2: 웹뷰 기반의 앱(SPA)을 React, Redux, webpack 기반으로 작업했습니다. React-router, i18n 등도 함께 적용했습니다.
+  edu:
+    - title: 국민대학교
+      term: '2008.03 - 2015.02'
+      major: 공간디자인 (3.67 / 4.5)
+    - title: 방송통신대학교
+      term: '2018.03 - 재학중'
+      major: 컴퓨터과학
+  award:
+    - title: 스마트TV APP 공모전 (우수상)
+      date: '2013.12'
+      loc: 티브로드
+      desc: 스마트TV에 들어가는 앱 공모전으로, 가족끼리 사진 앨범을 공유할 수 있는 서비스를 기획, 디자인하여 수상했습니다.
+    - title: 위키데이 (최우수상)
+      date: '2014.11'
+      loc: 콘텐츠코리아랩
+      desc: 1박 2일 동안 3D 프린팅을 이용해 아이디어를 구현하는 작업으로, 주방용 기기를 디자인 및 구현했습니다.
+    - title: 유니버설 디자인 공모전 (최우수상)
+      date: '2012.12'
+      loc: 한국장애인인권포럼
+      desc: 장애인, 노약자의 UX를 개선한 화장실을 디자인했습니다.
+  exhib:
+    - title: 2014 국민대 실내디자인학과 졸업전시회
+      term: '2014.10.22 - 28'
+      loc: 아라아트센터
+      desc: 
+    - title: 제7회 유니버설 디자인 수상작 전시
+      term: '2012.12.17 - 21'
+      loc: 혜화역
+      desc:
+    # - title: 씨게이트 하드봇 공모전 수상작 전시
+    #   term: '2012.07.08'
+    #   loc: 아트센터 에비뉴
+    #   desc: 

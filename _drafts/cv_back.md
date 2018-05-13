@@ -1,7 +1,7 @@
 ---
 layout: page
-title: CV
-permalink: /cv
+title: CV2
+permalink: /cv2
 ---
 
 #### About **JUNHO PARK**

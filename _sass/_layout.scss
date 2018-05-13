@@ -43,22 +43,18 @@
 
   .site-title {
     display: inline-block;
-    font-size: 1.2em;
+    font-size: 0.9em;
     text-align: center;
-    line-height: 2em;
+    line-height: 2.65em;
     color: $color-white !important;
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     background: $color-first;
     border-radius: 100px;
 
     @include media-query($on-palm) {
       width: 40px;
       height: 40px;
-    }
-
-    &:visited {
-      //color: $color-white;
     }
   }
 
@@ -85,6 +81,18 @@
             margin-right: 30px;
           }
         }
+      }
+    }
+
+    .btn-lang > a {
+      color: $color-white;
+      background-color: $color-second;
+      font-size: 1.125em;
+      padding: 4px 10px;
+      border: 0;
+
+      &:hover {
+        background-color: $color-first;
       }
     }
 
