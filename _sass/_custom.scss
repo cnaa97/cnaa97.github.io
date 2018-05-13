@@ -60,6 +60,17 @@
                     @include cv-link;
                     line-height: 1.8em;
                 }
+                &.i18n {
+                    margin-top: 10px;
+                    a {
+                        font-size: 0.9em;
+                        color: $text-color;
+                        border-bottom: 1px solid $color-third;
+                        &:hover {
+                            color: $color-second;
+                        }
+                    }
+                }
             }
         }
 

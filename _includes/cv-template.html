@@ -18,9 +18,9 @@
             <li><a href="{{ site.linkedIn }}" target="_blank">{{ site.data[page.lang].common.linkedin }}</a></li>
             <li><a href="mailto:{{ site.email }}" target="_blank">{{ site.data[page.lang].common.email }}</a></li>
             {% if page.lang == "ko" %}
-            <li><a href="/cv-en">{{ site.data[page.lang].common.cv_lang }}</a></li>
+            <li class="i18n"><a href="/cv-en">CV (English)</a></li>
             {% else %}
-            <li><a href="/cv">{{ site.data[page.lang].common.cv_lang }}</a></li>
+            <li class="i18n"><a href="/cv">CV (Korean)</a></li>
             {% endif %}
         </ul>
 

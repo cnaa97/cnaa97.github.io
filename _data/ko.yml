@@ -5,7 +5,6 @@ common:
   github: 깃허브
   linkedin: 링크드인
   email: 이메일
-  cv_lang: CV (EN)
 btn:
   close: 닫기
 cv:

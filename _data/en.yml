@@ -5,7 +5,6 @@ common:
   github: Github
   linkedin: LinkedIn
   email: Email
-  cv_lang: CV (Korean)
 btn:
   close: Close
 cv:
