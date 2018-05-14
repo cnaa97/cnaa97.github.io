@@ -1,7 +1,7 @@
 <style>
     .wrapper-content { max-width: 600px; }
     .post-header { display: none; }
-    .page-content { padding: 10px 0 80px; }
+    .page-content { padding: 10px 0 0; }
 </style>
 
 
@@ -34,9 +34,10 @@
         <div class="slogan">{{ site.data[page.lang].cv.slogan }}</div>
     </div>
 
+    <div class="flow-line"></div>
+
     <div class="section-timeline">
 
-        <div class="flow-line"></div>
         <div class="line">
 
             {% for item in site.data[page.lang]["cv"]["timeline"] %}
@@ -62,13 +63,13 @@
                 {% endif %}
             {% endfor %}
         </div>
-        <div class="flow-line bottom"></div>
     </div>
 
+    <div class="flow-line bottom"></div>
 
     <!-- 프로젝트 -->
     <section class="section-content">
-        <h3 class="title">{{ site.data[page.lang].cv.menu.project }}</h3>
+        <h3 class="title first">{{ site.data[page.lang].cv.menu.project }}</h3>
         <ul>
             {% for item in site.data[page.lang]["cv"]["project"] %}
                 <li>
@@ -137,7 +138,7 @@
     </section>
 
 
-    <!-- 수상실적 -->
+    <!-- 수상 -->
     <section class="section-content">
         <h3 class="title">{{ site.data[page.lang].cv.menu.award }}</h3>
         <ul>
@@ -149,7 +150,7 @@
                         <div class="sub-roll">{{ item.loc }}</div>
                     </div>
                     <div class="term">{{ item.date }}</div>
-                    <p class="short">
+                    <p class="long">
                         {{ item.desc }}
                     </p>
                 </li>

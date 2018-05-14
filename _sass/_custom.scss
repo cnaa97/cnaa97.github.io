@@ -179,6 +179,7 @@
                 > li {
                     display: list-item;
                     margin-bottom: 40px;
+                    margin-top: 10px;
 
                     &:before {
                         content: '';
@@ -224,6 +225,11 @@
 
     .section-content {
         > h3.title {
+            
+            &.first {
+                margin-top: 0;
+            }
+
             margin-top: 50px;
             font-size: 1em;
 
@@ -284,11 +290,14 @@
             word-break: keep-all;
             font-size: 0.9em;
             margin-bottom: 6px;
+            margin-top: 6px;
         }
         .long {
             word-break: keep-all;
             font-size: 0.8em;
-            color: #444;
+            background: #f1f1f1;
+            padding: 4px 8px;
+            color: #555;
         }
     }
 
@@ -328,11 +337,12 @@
     background-image: url("../img/flow-line.svg");
     background-size: 100% auto;
     width: 6px;
-    height: 60px;
+    height: 120px;
     margin-left: -23px;
-    transform: translateY(14px);
+    transform: rotate(90deg);
+    margin: 20px auto;
 
     &.bottom {
-        transform: translateY(-20px);
+        margin: 0 auto;
     }
 }

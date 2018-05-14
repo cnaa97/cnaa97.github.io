@@ -23,7 +23,7 @@ cv:
     exhib: 전시
   slogan: 성장에 대한 끊임 없는 욕구<br>문제를 먼저 정의하는 서비스 개발
   timeline:
-    - title: 회사 포트폴리오 홈페이지 풀스택 개발
+    - title: 포트폴리오 홈페이지 풀스택 개발
       link: '#commoners'
       tag: 
         - react (nextJS)
