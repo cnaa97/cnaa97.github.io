@@ -56,7 +56,7 @@ cv:
       roll: Front-End Developer
       term: NOV 2016 - FEB 2018
       desc1: React, Redux SPA 
-      desc2: Working as a Front-end developer. Mainly using React, Redux, Sass to make enterprise software. I made some components and covered the test with Test, Enzyme. I would be an Open source contributor while I made a React component which is based open source. I also developed a simple SVG icon management tool using nodeJS.
+      desc2: Working as a Front-end developer. Mainly using React, Redux, Sass to make enterprise software. I made some components and covered the test with Test, Enzyme. I was an Open source contributor while I made a React component which is based open source. I also developed a simple SVG icon management tool using nodeJS.
     - id: 
       title: SMATOOS
       roll: UX/UI Designer
@@ -88,7 +88,7 @@ cv:
       desc: Our team made a Smart TV application, which can share family's photo albums in Smart TV, using Android Application.
     - title: The 1st Wikiday (The grand prize)
       date: 'NOV 2014'
-      loc: 콘텐츠코리아랩
+      loc:  Contents Korea Lab
       desc: This is a Hackathon contest using the 3D printer. Our team designed a tool which could help in the kitchen.
     - title: Universal Design Contest (The grand prize)
       date: '2012.12'

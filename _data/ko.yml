@@ -32,7 +32,7 @@ cv:
         - mongodb
         - AWS
     - title: 가상화폐 홈페이지 개발
-      link: groocoin
+      link: 
       tag: 
         - vue
         - php
