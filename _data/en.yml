@@ -56,13 +56,13 @@ cv:
       roll: Front-End Developer
       term: NOV 2016 - FEB 2018
       desc1: React, Redux SPA 
-      desc2: Working as Front-end developer. Mainly using React, Redux, Sass to make enterprise software. <br> I made some components, and covered the test with Test, Enzyme. I would be a Open source contributor while I made a React open source based componet. I also developed a simple SVG icon management tool using nodeJS.
+      desc2: Working as a Front-end developer. Mainly using React, Redux, Sass to make enterprise software. I made some components and covered the test with Test, Enzyme. I would be an Open source contributor while I made a React component which is based open source. I also developed a simple SVG icon management tool using nodeJS.
     - id: 
       title: SMATOOS
       roll: UX/UI Designer
       term: UX/UI Designer | SMATOOS.Inc
-      desc1: Web and Mobile UX/UI Design, UI Prototyping (HTML, CSS), Marketing Design works.
-      desc2: #스마투스에서 UI 디자이너로 일을 했습니다. 영어 교육 플랫폼인 비네이티브 프로 웹/앱 UI 작업에 참여했으며, 마케팅 리소스를 디자인하기도 했습니다. 신규 서비스 웹페이지를 퍼블리싱하여 프로토타이핑 했습니다.
+      desc1: I designed a web service for Web.
+      desc2: Web and Mobile UX/UI Design, UI Prototyping (HTML, CSS), Marketing Design works.
   project:
     - id: commoners
       title: Company Portfolio Full stack development
@@ -85,11 +85,11 @@ cv:
     - title: Smart TV App Contest (Excellence award) 
       date: 'DEC 2013'
       loc: T-broad
-      desc: #스마트TV에 들어가는 앱 공모전으로, 가족끼리 사진 앨범을 공유할 수 있는 서비스를 기획, 디자인하여 수상했습니다.
+      desc: Our team made a Smart TV application, which can share family's photo albums in Smart TV, using Android Application.
     - title: The 1st Wikiday (The grand prize)
       date: 'NOV 2014'
       loc: 콘텐츠코리아랩
-      desc: #3D Printing Product 1박 2일 동안 3D 프린팅을 이용해 아이디어를 구현하는 작업으로, 주방용 기기를 디자인 및 구현했습니다.
+      desc: This is a Hackathon contest using the 3D printer. Our team designed a tool which could help in the kitchen.
     - title: Universal Design Contest (The grand prize)
       date: '2012.12'
       loc: The Human Rights Forum Of Persons with Disabilities in Korea

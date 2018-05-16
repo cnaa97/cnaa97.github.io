@@ -31,6 +31,15 @@ cv:
         - express
         - mongodb
         - AWS
+    - title: 가상화폐 홈페이지 개발
+      link: groocoin
+      tag: 
+        - vue
+        - php
+        - jquery
+        - svg
+        - html
+        - css
     - year: '2018'
     - title: 웹 기반 하이브리드앱 SPA 개발
       link: '#farota'
@@ -70,10 +79,15 @@ cv:
       term: '2018.03 - 2018.04'
       desc1: NextJS (React), Express, MongoDB 사용자 및 관리자 페이지 개발
       desc2: 디자인 스튜디오 commoners의 사용자 및 관리자용 <a href="https://commoners.co.kr" target="_blank">홈페이지</a>입니다. 프론트엔드는 NextJS(React) 기반이며, AWS의 E2C, S3, Router53 등을 활용하며 서버를 구축했습니다. 서버는 nginx 위에 express가 구동되며, 데이터베이스는 mongoose(mongodb)가 사용되었습니다.
+    - id: groocoin
+      title: 가상 화폐 홈페이지 개발
+      term: '2018.04 -'
+      desc1: ICO를 준비하는 가상 화폐 메인 홈페이지를 개발
+      desc2: php 기반의 정적인 홈페이지이며, 일부에서 vue 컴포넌트를 통해 화면이 구성됩니다. 일부 블록체인 데이터의 경우 php로 데이터를 받아와서 진행이 되며, svg 애니메이션이 적용됩니다. 나머지는 jquery가 주로 사용됩니다.
     - id: fatora
       title: 웹 기반 하이브리드앱 SPA 개발
       term: '2017.01 - 2017.10'
-      desc1: 농업 AI 제품 파로타의 <a href="https://play.google.com/store/apps/details?id=com.farota.console.android" target="_blank">안드로이드 앱</a> 하이브리드로 개발
+      desc1: 농업 AI 제품 파로타의 하이브리드 <a href="https://play.google.com/store/apps/details?id=com.farota.console.android" target="_blank">안드로이드 앱</a>
       desc2: 웹뷰 기반의 앱(SPA)을 React, Redux, webpack 기반으로 작업했습니다. React-router, i18n 등도 함께 적용했습니다.
   edu:
     - title: 국민대학교
