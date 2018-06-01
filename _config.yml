@@ -10,6 +10,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://junojunho.com"
 linkedIn: "https://www.linkedin.com/in/cnaa97"
 github: "https://github.com/cnaa97"
+gitbook: "https://docs.junojunho.com"
 
 # Permalinks
 permalink: /:categories/:title
