@@ -1,17 +1,9 @@
 /**
  * Syntax highlighting styles
  */
-.highlight {
-    @extend %vertical-rhythm;
 
-    .highlighter-rouge & {
-
-    }
-}
-
-.highlight pre, pre, .highlight .hll {
-    background-color: #F0F2F4;
-}
+.highlight { @extend %vertical-rhythm; }
+.highlight pre, pre, .highlight .hll { background-color: #F0F2F4; }
 .highlight .c { color: #008000 } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #0000ff } /* Keyword */

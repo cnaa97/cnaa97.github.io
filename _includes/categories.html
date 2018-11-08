@@ -1,9 +1,0 @@
-<ul>
-    {% for category in site.categories %}
-    {% assign currentCategory = category | first | slugify %}
-    <li>
-        <a class="sidebar-nav-item {% if page.category == currentCategory %}active{% endif %}"
-           href="{{ site.baseurl }}/category/{{ currentCategory }}">{{ currentCategory | capitalize }}</a>
-    </li>
-    {% endfor %}
-</ul>

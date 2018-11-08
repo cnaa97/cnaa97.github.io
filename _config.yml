@@ -1,12 +1,13 @@
 
 
 # Site settings
-title: Project. __ Junho Park
+title: "주노준호 블로그 :: tech + future + project"
+sitename: 주노준호 블로그
 email: cnaa97@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
+description: >
   Junho Park is a Front-end Developer and Designer living and working in Seoul, South Korea.
   Park held a bachelor’s degree of Fine Arts, majored in Spatial Design.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: ""
 url: "https://junojunho.com"
 linkedIn: "https://www.linkedin.com/in/cnaa97"
 github: "https://github.com/cnaa97"
@@ -15,8 +16,14 @@ gitbook: "https://docs.junojunho.com"
 # Permalinks
 permalink: /:categories/:title
 
-twitter_username: cnaa97
-github_username:  cnaa97
+# Nav
+nav:
+  - url: all
+    name: 전체글
+  - url: categories
+    name: 카테고리
+#  - url: about
+#     name: 소개
 
 # Build settings
 markdown: kramdown
@@ -27,10 +34,4 @@ assets:
 
 # Language
 languages: ["ko", "en"]
-
-# Plugins
-plugins:
-  - jekyll-paginate
-paginate: 10
-
 include: ['_pages']

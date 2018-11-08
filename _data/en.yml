@@ -1,6 +1,14 @@
 global:
   ko: 한글
   en: 영어
+footer:
+  home: Home
+  about: About
+  cv: CV
+  mailme: Email Me
+  subscribe: subscribe
+  rss: vis RSS
+  feedly: Subscribe via Feedly
 common:
   github: Github
   linkedin: LinkedIn
@@ -25,7 +33,7 @@ cv:
   timeline:
     - title: Company Portfolio Full stack development
       link: '#commoners'
-      tag: 
+      tag:
         - react (nextJS)
         - nodeJS
         - express
@@ -34,13 +42,13 @@ cv:
     - year: '2018'
     - title: Web-based Hybrid App
       link: '#farota'
-      tag: 
+      tag:
         - react
         - redux
         - jquery
     - title: React-based SPA
       link: '#bwg'
-      tag: 
+      tag:
         - react
         - redux
         - sass
@@ -55,9 +63,9 @@ cv:
       title: BankWareGlobal
       roll: Front-End Developer
       term: NOV 2016 - FEB 2018
-      desc1: React, Redux SPA 
+      desc1: React, Redux SPA
       desc2: Working as a Front-end developer. Mainly using React, Redux, Sass to make enterprise software. I made some components and covered the test with Test, Enzyme. I was an Open source contributor while I made a React component which is based open source. I also developed a simple SVG icon management tool using nodeJS.
-    - id: 
+    - id:
       title: SMATOOS
       roll: UX/UI Designer
       term: UX/UI Designer | SMATOOS.Inc
@@ -79,10 +87,10 @@ cv:
       term: MAR 2008 - FEB 2015
       major: BFA in Interior Design (Spatial Design) 	3.67 / 4.5 GPA
     - title: Korea National Open University
-      term: MAR 2018 - 
+      term: MAR 2018 -
       major: Computer Science
   award:
-    - title: Smart TV App Contest (Excellence award) 
+    - title: Smart TV App Contest (Excellence award)
       date: 'DEC 2013'
       loc: T-broad
       desc: Our team made a Smart TV application, which can share family's photo albums in Smart TV, using Android Application.
@@ -98,18 +106,18 @@ cv:
     - title: 2014 Kookmin Univ. Dept Interior Design Graduation Exhibition
       term: '22 - 28 OCT 2014'
       loc: Ara Art center, Seoul, Korea
-      desc: 
+      desc:
     - title: The 7th Universal Design Contest Winner’s Exhibition
       term: '17 - 21 DEC 2012 '
       loc: Seoul Metro Hyehwa Station, Seoul, Korea
-      desc: 
+      desc:
     # - title: Seagate Hardbot Contest Exhibition
-    #   term: JUL 8 2012 
+    #   term: JUL 8 2012
     #   loc: The Avenue Art center, Seoul, Korea
-    #   desc: 
+    #   desc:
   # teach:
   #   - title: Design teacher
   #     term: 'MAR - JUN 2014'
-  #     loc: Changdeok Girls Middle School, Seoul, Korea 
+  #     loc: Changdeok Girls Middle School, Seoul, Korea
   #     desc: Teaching basic Fine Art and Graphic Design
-
+front-end: Front-end

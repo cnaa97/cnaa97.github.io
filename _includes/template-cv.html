@@ -111,9 +111,11 @@
                     <p class="short">
                         {{ item.desc1 }}
                     </p>
+                    {% if item.desc2 %}
                     <p class="long">
                         {{ item.desc2 }}
                     </p>
+                    {% endif %}
                 </li>
             {% endfor %}
         </ul>
@@ -164,22 +166,17 @@
 
 
     {% comment %}
-    {% endcomment %}
-
     <div class="popup-bottom">
         <div class="label">{{ site.data[page.lang].cv.findJobLabel }}</div>
         <div class="close">{{ site.data[page.lang].btn.close }}</div>
     </div>
-    
-    
-    
+    {% endcomment %}    
 
 </div>
 
+{% comment %}
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script>
-    var $root = $('html body');
-
     // 팝업 처리
     var $popupBottom = $('.popup-bottom');
     var popupTriggerClassNs = 'pop';
@@ -204,3 +201,4 @@
     });
 
 </script>
+{% endcomment %}    

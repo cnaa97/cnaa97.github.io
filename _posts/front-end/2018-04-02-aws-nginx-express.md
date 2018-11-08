@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "AWS EC2 + NginX + Nodejs Express"
+desc: "Express에서 주로 사용되는 서버 구성"
 date:   2018-04-02
 category: Front-end
 comments: true
@@ -8,7 +9,7 @@ comments: true
 
 ### 배경
 
-[commoners(커머너즈) 홈페이지](https://commoners.co.kr/)를 풀스택으로 개발하면서 여러 이슈가 있었는데, 그 중 경험이 없어서 어려웠던 부분이 백엔드였다. 배포도 마찬가지였다. 서버에 배포시켜 웹서버를 띄우는 것보다, 개발 환경에서 가상 서버 크고 끄는데 더 익숙했던 나는 서버 작업 모두가 큰 이슈였다. 
+[commoners(커머너즈) 홈페이지](https://commoners.co.kr/)를 풀스택으로 개발하면서 여러 이슈가 있었는데, 그 중 경험이 없어서 어려웠던 부분이 백엔드였다. 배포도 마찬가지였다. 서버에 배포시켜 웹서버를 띄우는 것보다, 개발 환경에서 가상 서버 크고 끄는데 더 익숙했던 나는 서버 작업 모두가 큰 이슈였다.
 
 백엔드 스택은 AWS의 EC2 리눅스 서버를 사용하고, nginx 위에 Nodejs express, 데이터베이스는 mongodb를 사용한다. 이 과정에서 겪은 몇몇 문제를 공유해본다.
 
@@ -16,7 +17,7 @@ comments: true
 
 ### forever로 express 서버 실행
 
-서버 실행은 `npm start`로 express 서버를 실행시키는 방법을 택했다. 서버가 프로세스(백그라운드)에서 실행되어야 했기에 [forever](https://www.npmjs.com/package/forever) 라는 프로세스 관리 패키지를 글로벌에 설치하여 사용했고, 잘 작동한다. 
+서버 실행은 `npm start`로 express 서버를 실행시키는 방법을 택했다. 서버가 프로세스(백그라운드)에서 실행되어야 했기에 [forever](https://www.npmjs.com/package/forever) 라는 프로세스 관리 패키지를 글로벌에 설치하여 사용했고, 잘 작동한다.
 
 forever를 이용해서 스크립트를 실행하는 코드는 아래와 같다.
 ```
@@ -39,20 +40,20 @@ sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-po
 
 크롬에서는 사용자 랩탑의 카메라를 사용하기 위해서는 SSL 인증을 요구했는데, 카메라를 사용해서 얼굴을 인식하는 것과 같은 [인터렉션 디자인 작업]()을 커머너즈 홈페이지에 적용할 경우를 대비해 SSL 적용이 필요했다.
 
-SSL을 적용하는 것은 AWS에서 처리했는데, [Certificate Manager](https://aws.amazon.com/certificate-manager/)를 사용하면 무료로 인증서를 발급받아 적용할 수 있다. 
+SSL을 적용하는 것은 AWS에서 처리했는데, [Certificate Manager](https://aws.amazon.com/certificate-manager/)를 사용하면 무료로 인증서를 발급받아 적용할 수 있다.
 
-여기에 EC2의 로드밸런서를 이용해 80 포트로 접근하면 http, 443 포트로 접근하면 https로 넘겨준다. 
+여기에 EC2의 로드밸런서를 이용해 80 포트로 접근하면 http, 443 포트로 접근하면 https로 넘겨준다.
 
 <br/>
 
 ### http 접근 시 https로 넘기는 문제
 
-또 다른 문제에 직면했는데, http로 접근했을 때도 https로 접속시키게 만들고 싶었다. express의 라우터를 리슨하면서 처리해봤는데, 잘 되지 않았다. AWS의 로드밸런서 만으로 되지 않았다. 
+또 다른 문제에 직면했는데, http로 접근했을 때도 https로 접속시키게 만들고 싶었다. express의 라우터를 리슨하면서 처리해봤는데, 잘 되지 않았다. AWS의 로드밸런서 만으로 되지 않았다.
 
 페이스북 AWS 커뮤니티에 질문해보니, 3가지 답변이 올라왔다.
 
 1. 웹서버에서 해결 (Nginx rewrite 모듈을 적용)
-2. AWS 기능 활용 (클라우드 프론트 / ALB) 
+2. AWS 기능 활용 (클라우드 프론트 / ALB)
 3. Express `x-forwarded-proto` 로 해결
 
 나는 express 보다 비교적 안정적인 nginx를 express 앞단에 두는 방법을 택했다. 조금 검색해보니 해킹 위험 방지 효과도 있고 마침 EC2에 nginx로 설치되어 있어서 1번 방법을 선택했다. 직접적으로 익스프레스 서버를 실행하는건 동일하지만, nginx의 프록시패스로 처리된다.
@@ -84,8 +85,8 @@ iptables -t nat -D PREROUTING 1
 cd /etc/nginx/
 ```
 
-- `nginx.conf` 파일을 수정한다. 
-    기존 설치된 `nginx.conf` 파일은 백업 본을 복사해두고, 불필요한 부분은 주석 처리한 후 `include` 하는 방법을 선택했다. 
+- `nginx.conf` 파일을 수정한다.
+    기존 설치된 `nginx.conf` 파일은 백업 본을 복사해두고, 불필요한 부분은 주석 처리한 후 `include` 하는 방법을 선택했다.
 
 - nginx.conf 편집 (주석 생략)
 
@@ -101,7 +102,7 @@ http {
     default_type  application/octet-stream;
     sendfile        on;
     keepalive_timeout  65;
-    
+
     # servers 하위 설정 파일을 모두 include 시킨다
     include servers/*;
 }
