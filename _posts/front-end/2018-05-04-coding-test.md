@@ -2,7 +2,6 @@
 layout: post
 title:  "JS 코딩 면접과 문제 해결 과정"
 desc: "프론트엔드 개발자 코딩 테스트 후기"
-img: https:/junojunho.com/public/img/graph.png
 date:   2018-05-04
 category: Front-end
 comments: true
