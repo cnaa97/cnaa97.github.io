@@ -28,9 +28,14 @@
 .index-content {@include clearfix;}
 .index-content-col { float: left; }
 .index-content-col-categories { width: 40%; margin-top: 10px; @include media-query($on-palm) { display: none !important; } }
-.index-content-col-recent { width: 60%;@include media-query($on-palm) { margin-top: 40px; width: 100%;}}
+.index-content-col-recent { width: 60%; @include on-mobile-wrapper() }
 .index-content-col-title { margin-bottom: 30px; padding: 0; @include media-query($on-palm) { margin-bottom: 10px; }}
 
+
+.page-wrapper { @include on-mobile-wrapper() }
+@include media-query($on-palm) {
+  .page-wrapper .container-categories { padding-top: 10px; }
+}
 
 /**
  * Site footer

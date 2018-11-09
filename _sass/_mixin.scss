@@ -68,3 +68,18 @@
   -o-transition: $transition;
   transition: $transition;
 }
+
+// 모바일에서 네비로부터 콘텐츠 띄우기
+@mixin on-mobile-wrapper {
+  @include media-query($on-palm) {
+    margin-top: 50px; width: 100%;
+  }
+}
+
+@mixin text-over {
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  word-wrap:normal;
+  overflow:hidden;
+  @content;
+}

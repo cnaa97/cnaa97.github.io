@@ -3,4 +3,6 @@ layout: default
 permalink: /all
 ---
 
-{% include container-posts-all.html lang="ko" %}
+<div class="page-wrapper">
+  {% include container-posts-all.html lang="ko" %}
+</div>

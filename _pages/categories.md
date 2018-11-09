@@ -3,6 +3,8 @@ layout: default
 permalink: /categories
 ---
 
-{% include container-categories.html lang="ko" title=False %}
+<div class="page-wrapper">
+  {% include container-categories.html lang="ko" title=False %}
+</div>
 
 {% include container-posts-all-by-category.html lang="ko" %}

@@ -40,15 +40,15 @@ $colorWhite: #fff;
 .container-categories-badge {}
 
 .container-posts-recent { padding: 0; margin: 0; }
-.container-posts-recent-li { position: relative; min-height: 90px; margin-bottom: 18px; @include media-query($on-palm) { margin-bottom: 0; } }
+.container-posts-recent-li { position: relative; min-height: 90px; margin-bottom: 18px; display: block; @include media-query($on-palm) { margin-bottom: 0; } }
 .container-posts-recent-img-div {}
 .container-posts-recent-img {}
-.container-posts-recent-info { float: left; margin-top: 10px; }
+.container-posts-recent-info { float: left; margin-top: 10px; @include media-query($on-palm) { float: none;} }
 .container-posts-recent-title {}
 .container-posts-recent-link {}
-.container-posts-recent-desc {}
-.container-posts-recent-date { margin-left: 6px; }
-.container-posts-recent-category { margin-right: 6px; }
+.container-posts-recent-category { margin-right: 6px; @include media-query($on-palm) { float: left; } }
+.container-posts-recent-desc { @include media-query($on-palm) { float: left; max-width: 18rem; @include text-over(); } }
+.container-posts-recent-date { margin-left: 6px; @include media-query($on-palm) { display: block; margin-left: 0; clear: both; margin-bottom: 32px; } }
 
 .container-posts-by-category {}
 .posts-by-category-title {}
@@ -85,7 +85,7 @@ $colorWhite: #fff;
 .list-in--title { margin: 0; padding: 0; margin-bottom: 8px; }
 .list-in--link { }
 .list-in--sub { display: inline-block; margin-right: 6px; }
-.list-in--date { }
+.list-in--date { @include media-query($on-palm) { display: block; } }
 .list-in--img-wrap {}
 .list-in--img {}
 .post-img-div { float: left; margin-right: 20px; height: 90px; border-radius: 8px; overflow: hidden; display: inline-block; }
