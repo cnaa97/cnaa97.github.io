@@ -12,17 +12,46 @@
   </title>
 
   {% if page.title %}
-  <meta property="og:title" content="{{ page.title | escape }} : {{ site.title | escape }}">
+    <meta property="og:title" content="{{ page.title | escape }} : {{ site.title | escape }}">
   {% else %}
-  <meta property="og:title" content="{{ site.title | escape }}">
+    <meta property="og:title" content="{{ site.title | escape }}">
   {% endif %}
 
+  {% if page.title %}
+    <meta content="article" property="og:type">
+  {% else %}
+    <meta content="website" property="og:type">
+  {% endif %}
+
+  {% if page.url %}
+    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+  {% endif %}
+
+  {% if page.date %}
+    <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
+    <meta content="{{ site.url }}/cv" property="article:author">
+  {% endif %}
+
+  {% if page.img %}
+  <meta content="/{{ page.img }}" property="og:image">
+  {% else %}
   <meta property="og:image" content="http://cnaa97.github.io/public/img/graph.png">
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  {% endif %}
+
+  {% if page.desc %}
+    <meta content="{{ page.desc }}" property="og:description">
+  {% else %}
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  {% endif %}
+
+  {% if page.categories %}
+    {% for category in page.categories limit:1 %}
+      <meta content="{{ category }}" property="article:section">
+    {% endfor %}
+  {% endif %}
 
   <link rel="stylesheet" href="{{ '/public/style/main.css' | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-  <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
 </head>
