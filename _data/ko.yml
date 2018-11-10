@@ -1,3 +1,9 @@
+front-end: 프론트엔드
+design: 디자인
+vision: 비전
+start-up: 스타트업
+project: 프로젝트
+productivity: 생산성
 lang:
   ko: Ko
   en: En
@@ -137,8 +143,3 @@ cv:
     #   term: '2012.07.08'
     #   loc: 아트센터 에비뉴
     #   desc:
-front-end: 프론트엔드
-design: 디자인
-vision: 비전
-start-up: 스타트업
-project: 프로젝트

@@ -1,3 +1,9 @@
+front-end: Front-end
+design: Design
+vision: Vision
+start-up: Startup
+project: Project
+productivity: Productivity
 global:
   ko: 한글
   en: 영어
@@ -120,4 +126,3 @@ cv:
   #     term: 'MAR - JUN 2014'
   #     loc: Changdeok Girls Middle School, Seoul, Korea
   #     desc: Teaching basic Fine Art and Graphic Design
-front-end: Front-end
