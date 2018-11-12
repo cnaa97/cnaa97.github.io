@@ -17,7 +17,7 @@ $colorWhite: #fff;
 .com-nav-sitename--sub { font-size: $fontSize22; font-weight: bold; margin-right: 6px; }
 .com-sub-title { font-size: $fontSize22; color: $fontcolor; font-weight: 200; }
 
-.com-post-title { font-size: 1.6rem; color: $fontcolor; font-weight: bold; @include media-query($on-palm) { font-size: $fontSize22; } }
+.com-post-title { font-size: 1.6rem; color: $fontcolor; font-weight: bold; display: inline-block; @include media-query($on-palm) { font-size: $fontSize22; } }
 .com-post-category { color: $fontcolor; font-weight: 400; }
 .com-post-sub-title { font-size: $fontSize16; font-weight: 200; }
 .com-post-date { color: $colorLightGray; font-weight: 200; }
@@ -40,21 +40,24 @@ $colorWhite: #fff;
 .container-categories-badge {}
 
 .container-posts-recent { padding: 0; margin: 0; }
-.container-posts-recent-li { position: relative; min-height: 90px; margin-bottom: 18px; display: block; @include media-query($on-palm) { margin-bottom: 0; } }
+.container-posts-recent-li { position: relative; min-height: 90px; margin-bottom: 18px; display: block; @include media-query($on-palm) { display: inline-block; min-height: auto; } }
 .container-posts-recent-img-div {}
 .container-posts-recent-img {}
 .container-posts-recent-info { float: left; margin-top: 10px; @include media-query($on-palm) { float: none;} }
 .container-posts-recent-title {}
 .container-posts-recent-link {}
 .container-posts-recent-category { margin-right: 6px; @include media-query($on-palm) { float: left; } }
-.container-posts-recent-desc { @include media-query($on-palm) { float: left; max-width: 18rem; @include text-over(); } }
-.container-posts-recent-date { margin-left: 6px; @include media-query($on-palm) { display: block; margin-left: 0; clear: both; margin-bottom: 32px; } }
+.container-posts-recent-desc { @include media-query($on-palm) { float: left; max-width: 15rem; @include text-over(); @include clearfix; } }
+.container-posts-recent-date { margin-left: 6px; @include media-query($on-palm) { display: block; margin-left: 0; clear: both; } }
 
 .container-posts-by-category {}
 .posts-by-category-title {}
 .list-out { margin: 0; padding: 0; }
-.list-out--li {
-  @include media-query($on-palm) {
+.list-out--li {}
+
+@include media-query($on-palm) {
+  .categories-content .list-out--li,
+  .index-content .list-out--li {
     padding-top: 40px;
     &::before {
       content: '';
@@ -67,6 +70,7 @@ $colorWhite: #fff;
   }
 }
 
+
 .list-out--title { padding: 0; margin-bottom: 30px; margin-top: 60px;
   @include media-query($on-palm) {
     margin-bottom: 10px;
@@ -76,11 +80,7 @@ $colorWhite: #fff;
 .posts-by-category .list-out--title { margin-top: 0; }
 .list-out--link { }
 .list-in { margin: 0; padding: 0; }
-.list-in--li {width: 100%; display: inline-block; margin-bottom: 18px;
-  @include media-query($on-palm) {
-    margin-bottom: 0;
-  }
-}
+.list-in--li {width: 100%; display: inline-block; margin-bottom: 18px; @include media-query($on-palm) { margin-bottom: 10px; } }
 .list-in--inner { float: left; margin-top: 12px; }
 .list-in--title { margin: 0; padding: 0; margin-bottom: 8px; }
 .list-in--link { }
