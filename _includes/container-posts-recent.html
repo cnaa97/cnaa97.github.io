@@ -11,11 +11,11 @@
         <h3 class="container-posts-recent-title list-in--title">
           <a class="container-posts-recent-link com-post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h3>
+        {% assign currentCategory = post.categories | first | slugify %}
         <a href="{{ site.baseurl }}/category/{{ currentCategory }}" class="container-posts-recent-category com-post-category">{{ site.data[include.lang][currentCategory] }}</a>
         {% if post.desc %}
           <span class="container-posts-recent-desc com-post-sub-title">{{ post.desc }}</span>
         {% endif %}
-        {% assign currentCategory = post.categories | first | slugify %}
         {% comment %}<span class="container-posts-recent-date com-post-date">{{ post.date | date: "%b %-d, %Y" }}</span>{% endcomment %}
       </div>
     </li>
