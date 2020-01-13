@@ -15,7 +15,6 @@
         </div>
         <ul class="social">
             <li><a href="{{ site.github }}" target="_blank">{{ site.data[page.lang].common.github }}</a></li>
-            <li><a href="{{ site.gitbook }}" target="_blank">Gitbook (Today What I Learned)</a></li>
             <li><a href="{{ site.linkedIn }}" target="_blank">{{ site.data[page.lang].common.linkedin }}</a></li>
             <li><a href="mailto:{{ site.email }}" target="_blank">{{ site.data[page.lang].common.email }}</a></li>
             {% if page.lang == "ko" %}
@@ -37,7 +36,7 @@
 
     <div class="flow-line"></div>
 
-    <div class="section-timeline">
+    <!-- <div class="section-timeline">
 
         <div class="line">
 
@@ -64,12 +63,12 @@
                 {% endif %}
             {% endfor %}
         </div>
-    </div>
+    </div> -->
 
-    <div class="flow-line bottom"></div>
+    <!-- <div class="flow-line bottom"></div> -->
 
     <!-- 프로젝트 -->
-    <section class="section-content">
+    <!-- <section class="section-content">
         <h3 class="title first">{{ site.data[page.lang].cv.menu.project }}</h3>
         <ul>
             {% for item in site.data[page.lang]["cv"]["project"] %}
@@ -93,7 +92,7 @@
                 </li>
             {% endfor %}
         </ul>
-    </section>
+    </section> -->
 
 
     <!-- 경력 -->
@@ -170,7 +169,7 @@
         <div class="label">{{ site.data[page.lang].cv.findJobLabel }}</div>
         <div class="close">{{ site.data[page.lang].btn.close }}</div>
     </div>
-    {% endcomment %}    
+    {% endcomment %}
 
 </div>
 
@@ -185,7 +184,7 @@
     $(window).on('scroll', function () {
         if (!neverShowPopup) {
             var scrollTop = $(this).scrollTop();
-            
+
             if (scrollTop && scrollTop > 100 && scrollTop < 1700) {
                 !$popupBottom.hasClass(popupTriggerClassNs) && $popupBottom.addClass(popupTriggerClassNs);
             } else if (scrollTop < 100 || scrollTop > 1600) {
@@ -201,4 +200,4 @@
     });
 
 </script>
-{% endcomment %}    
+{% endcomment %}

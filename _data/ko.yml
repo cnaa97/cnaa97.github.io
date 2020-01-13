@@ -38,7 +38,7 @@ cv:
   slogan: 성장에 대한 끊임 없는 욕구<br>문제를 먼저 정의하는 서비스 개발
   timeline:
     - title: 포트폴리오 홈페이지 풀스택 개발
-      link: '#commoners'
+      link:
       tag:
         - react (nextJS)
         - nodeJS
@@ -103,7 +103,7 @@ cv:
     - id: groocoin
       title: 가상 화폐 홈페이지 개발
       term: '2018.04 -'
-      desc1: ICO를 준비하는 가상 화폐 메인 홈페이지를 개발
+      desc1: ICO를 준비하는 가상 화폐 메인 홈페이지 개발
       desc2: php 기반의 정적인 홈페이지이며, 일부에서 vue 컴포넌트를 통해 화면이 구성됩니다. 일부 블록체인 데이터의 경우 php로 데이터를 받아와서 진행이 되며, svg 애니메이션이 적용됩니다. 나머지는 jquery가 주로 사용됩니다.
     - id: fatora
       title: 웹 기반 하이브리드앱 SPA 개발
@@ -113,11 +113,15 @@ cv:
   edu:
     - title: 국민대학교
       term: '2008.03 - 2015.02'
-      major: 공간디자인 (3.67 / 4.5)
-    - title: 방송통신대학교
-      term: '2018.03 - 재학중'
-      major: 컴퓨터과학
+      major: 공간디자인
+    # - title: 방송통신대학교
+    #   term: '2018.03 - 재학중'
+    #   major: 컴퓨터과학
   award:
+    - title: 레드닷 디자인 어워드 2019 위너
+      date: '2019.09'
+      loc: Red Dot Design Award
+      desc: 서비스 디자인 카테고리로 참여했습니다. Vue + Three.js 기반 3D 마스크팩 솔루션이 포함되었습니다.
     - title: 스마트TV APP 공모전 (우수상)
       date: '2013.12'
       loc: 티브로드

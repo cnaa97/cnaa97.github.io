@@ -65,18 +65,26 @@ cv:
         - jquery
     - year: '2017'
   exp:
+    - id: 11st
+      title: 11street
+      roll: Front-End Developer
+      term: '2018.11 - present'
+    - id: skp
+      title: SK Planet
+      roll: Front-End Developer
+      term: '2018.07 - 2018.10 (Spin-off)'
     - id: bwg
       title: BankWareGlobal
       roll: Front-End Developer
       term: NOV 2016 - FEB 2018
       desc1: React, Redux SPA
       desc2: Working as a Front-end developer. Mainly using React, Redux, Sass to make enterprise software. I made some components and covered the test with Test, Enzyme. I was an Open source contributor while I made a React component which is based open source. I also developed a simple SVG icon management tool using nodeJS.
-    - id:
-      title: SMATOOS
-      roll: UX/UI Designer
-      term: UX/UI Designer | SMATOOS.Inc
-      desc1: I designed a web service for Web.
-      desc2: Web and Mobile UX/UI Design, UI Prototyping (HTML, CSS), Marketing Design works.
+    # - id:
+    #   title: SMATOOS
+    #   roll: UX/UI Designer
+    #   term: UX/UI Designer | SMATOOS.Inc
+    #   desc1: I designed a web service for Web.
+    #   desc2: Web and Mobile UX/UI Design, UI Prototyping (HTML, CSS), Marketing Design works.
   project:
     - id: commoners
       title: Company Portfolio Full stack development
@@ -92,10 +100,14 @@ cv:
     - title: Kookmin University, Seoul, South Korea
       term: MAR 2008 - FEB 2015
       major: BFA in Interior Design (Spatial Design) 	3.67 / 4.5 GPA
-    - title: Korea National Open University
-      term: MAR 2018 -
-      major: Computer Science
+    # - title: Korea National Open University
+    #   term: MAR 2018 -
+    #   major: Computer Science
   award:
+    - title: Red Dot Design Award 2019 winner
+      date: 'SEP 2019'
+      loc: Red Dot
+      desc: I participated in the service design category at the Red Dot Design Award. As Service Designer and Web Developer, Out team made a web-based 3D mask solution for IOPE.
     - title: Smart TV App Contest (Excellence award)
       date: 'DEC 2013'
       loc: T-broad
