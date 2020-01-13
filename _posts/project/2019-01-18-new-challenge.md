@@ -5,6 +5,7 @@ desc: "도전! 프론트엔드 개발자의 머신러닝 학습"
 date:   2019-01-18
 category: Project
 comments: true
+published: false
 ---
 
 ## 오늘 성장했어?
