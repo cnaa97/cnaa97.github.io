@@ -3,7 +3,7 @@ layout: post
 title: "생산성 도구"
 desc: "2017년, 내가 쓰고 있는 생산성 앱"
 date:   2017-10-12
-category: Project
+category: Productivity
 comments: true
 ---
 

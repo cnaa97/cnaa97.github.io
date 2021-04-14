@@ -264,6 +264,11 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  img + small {
+    margin-bottom: 20px;
+    display: block;
+  }
 }
 
 /**

@@ -17,7 +17,7 @@ $colorWhite: #fff;
 .com-nav-sitename--sub { font-size: $fontSize22; font-weight: bold; margin-right: 6px; }
 .com-sub-title { font-size: $fontSize22; color: $fontcolor; font-weight: 200; }
 
-.com-post-title { font-size: 1.6rem; color: $fontcolor; font-weight: bold; display: inline-block; @include media-query($on-palm) { font-size: $fontSize22; } }
+.com-post-title { font-size: 1.6rem; color: $fontcolor; font-weight: bold; display: inline-block; @include media-query($on-palm) { font-size: $fontSize22; } line-height: 1.5; }
 .com-post-category { color: $fontcolor; font-weight: 400; }
 .com-post-sub-title { font-size: $fontSize16; font-weight: 200; }
 .com-post-date { color: $colorLightGray; font-weight: 200; }
