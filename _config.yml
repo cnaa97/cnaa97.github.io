@@ -1,0 +1,37 @@
+
+
+# Site settings
+title: "주노준호 블로그"
+subtitle: ":: tech + future + project"
+sitename: 주노준호 블로그
+email: cnaa97@gmail.com
+description: >
+  정리하는 블로그
+baseurl: ""
+url: "https://junojunho.com"
+linkedIn: "https://www.linkedin.com/in/cnaa97"
+github: "https://github.com/cnaa97"
+gitbook: "https://docs.junojunho.com"
+
+# Permalinks
+permalink: /:categories/:title
+
+# Nav
+nav:
+  - url: all
+    name: 전체글
+  - url: categories
+    name: 카테고리
+#  - url: about
+#     name: 소개
+
+# Build settings
+markdown: kramdown
+assets:
+  compress:
+    - css: true
+    - js: true
+
+# Language
+languages: ["ko", "en"]
+include: ['_pages']
