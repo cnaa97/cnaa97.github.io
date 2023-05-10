@@ -1,0 +1,51 @@
+---
+title: SVG Editor
+permalink: /test/svg-editor
+---
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bear Todo</title>
+    <link rel="apple-touch-icon" href="http://cnaa97.github.io/public/img/bear-todo-icon.png">
+    <link rel="manifest" href="http://cnaa97.github.io/public/other/manifest.webmanifest">
+</head>
+<body>
+  <div class="view">
+    <div class="item">
+      <h3>박스 컬러</h3>
+      <select name="rectColor" id="selRectColor">
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+      </select>
+    </div>
+    <div class="item">
+      <h3>텍스트 컬러</h3>
+      <select name="textColor" id="selTextColor">
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+      </select>
+    </div>
+  </div>
+  <div class="canvas-wrap" contentEditable="true" style="outline: none; margin-top: 20px;" aria-label="문서 내용" spellcheck="false" role="textbox">
+    <svg width="300" height="100" viewBox="0 0 300 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="300" height="100" fill="red" id="svgRect" />
+      <text id="svgText" x="50%" y="50%" fill="blue" dominant-baseline="middle" text-anchor="middle">안녕하세요</text>
+    </svg>
+  </div>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    $('#selRectColor').on('change', function(e){
+      $('#svgRect').attr('fill', e.target.value);
+    })
+    $('#selTextColor').on('change', function(e){
+      $('#svgText').attr('fill', e.target.value);
+    })
+  </script>
+</body>
+</html>

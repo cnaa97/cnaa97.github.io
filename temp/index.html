@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<div class="index-content">
+  <div class="index-content-col index-content-col-categories">
+    {% include container-categories.html lang="ko" %}
+  </div>
+  <div class="index-content-col index-content-col-recent">
+    {% include container-posts-recent.html lang="ko" %}
+  </div>
+</div>
+<div class="index-content">
+  {% include container-posts-all-by-category.html lang="ko" %}
+</div>
+
+
+{% if jekyll.environment == 'production' %}
+<script id="dsq-count-scr" src="//cnaa97.disqus.com/count.js" async></script>
+{% endif %}

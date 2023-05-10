@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    {% include component-header.html %}
+
+    <div class="page-content">
+      <div class="wrapper wrapper-content">
+        {{ content }}
+      </div>
+    </div>
+
+    {% include component-footer.html %}
+    {% include util-analytics.html %}
+  </body>
+</html>

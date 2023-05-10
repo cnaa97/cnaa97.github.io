@@ -1,0 +1,35 @@
+// variables
+
+$base-font-family: "Noto Sans Korean", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     60px;
+$spacing-syntax:   30px;
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+$brand-color:      #3790FF;
+
+$color-first:      #F5174E;
+$color-second:     #4C1CE4;
+$color-third :     #26A6FE;
+$color-four :      #FFE601;
+$color-five :      #FE4E39;
+
+$color-timeline:   #D8D8D8;
+
+$color-white:      #fff;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    800px;
+$content-width-max:1000px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
