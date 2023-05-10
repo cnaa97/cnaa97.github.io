@@ -1,0 +1,140 @@
+front-end: Front-end
+design: Design
+vision: Vision
+start-up: Startup
+project: Project
+productivity: Productivity
+global:
+  ko: 한글
+  en: 영어
+footer:
+  home: Home
+  about: About
+  cv: CV
+  mailme: Email Me
+  subscribe: subscribe
+  rss: vis RSS
+  feedly: Subscribe via Feedly
+common:
+  github: Github
+  linkedin: LinkedIn
+  email: Email
+btn:
+  close: Close
+cv:
+  name: Junho Park
+  roll: Front-End Developer
+  loc: Seoul, Korea
+  findJobLabel: Now, Looking for a job!
+  menu:
+    exp: EXPERIENCES
+    edu: EDUCATIONS
+    project: PROJECT
+    award: AWARDS
+    teach: TEACHING
+    skill: SKILLS
+    cert: CERTIFICATIONS
+    exhib: EXHIBITIONS
+  slogan: The Infinite Desire for Growth<br>Develop a service that defines the problem first
+  timeline:
+    - title: Company Portfolio Full stack development
+      link: '#commoners'
+      tag:
+        - react (nextJS)
+        - nodeJS
+        - express
+        - mongodb
+        - AWS
+    - year: '2018'
+    - title: Web-based Hybrid App
+      link: '#farota'
+      tag:
+        - react
+        - redux
+        - jquery
+    - title: React-based SPA
+      link: '#bwg'
+      tag:
+        - react
+        - redux
+        - sass
+        - webpack
+        - jest
+        - svg
+        - enzyme
+        - jquery
+    - year: '2017'
+  exp:
+    - id: 11st
+      title: 11street
+      roll: Front-End Developer
+      term: '2018.11 - present'
+    - id: skp
+      title: SK Planet
+      roll: Front-End Developer
+      term: '2018.07 - 2018.10 (Spin-off)'
+    - id: bwg
+      title: BankWareGlobal
+      roll: Front-End Developer
+      term: NOV 2016 - FEB 2018
+      desc1: React, Redux SPA
+      desc2: Working as a Front-end developer. Mainly using React, Redux, Sass to make enterprise software. I made some components and covered the test with Test, Enzyme. I was an Open source contributor while I made a React component which is based open source. I also developed a simple SVG icon management tool using nodeJS.
+    # - id:
+    #   title: SMATOOS
+    #   roll: UX/UI Designer
+    #   term: UX/UI Designer | SMATOOS.Inc
+    #   desc1: I designed a web service for Web.
+    #   desc2: Web and Mobile UX/UI Design, UI Prototyping (HTML, CSS), Marketing Design works.
+  project:
+    - id: commoners
+      title: Company Portfolio Full stack development
+      term: '2018.03 - 2018.04'
+      desc1: NextJS (React), Express, MongoDB. Developed page for users and administrators.
+      desc2: I have developed <a href="https://commoners.co.kr" target="_blank">the homepage</a> of Design Studio, commoners. This homepage is based on NextJS (React), AWS E2C, S3, Router53. The server runs express on NginX, the database was used mongoose(mongodb).
+    - id: fatora
+      title: Web based Hybrid Application
+      term: '2017.01 - 2017.10'
+      desc1: I made a web based <a href="https://play.google.com/store/apps/details?id=com.farota.console.android" target="_blank">android application</a> of AI Agriculture product named farota.
+      desc2: 'Based on React, Redux, webpack. React-router, i18n ect.'
+  edu:
+    - title: Kookmin University, Seoul, South Korea
+      term: MAR 2008 - FEB 2015
+      major: BFA in Interior Design (Spatial Design) 	3.67 / 4.5 GPA
+    # - title: Korea National Open University
+    #   term: MAR 2018 -
+    #   major: Computer Science
+  award:
+    - title: Red Dot Design Award 2019 winner
+      date: 'SEP 2019'
+      loc: Red Dot
+      desc: I participated in the service design category at the Red Dot Design Award. As Service Designer and Web Developer, Out team made a web-based 3D mask solution for IOPE.
+    - title: Smart TV App Contest (Excellence award)
+      date: 'DEC 2013'
+      loc: T-broad
+      desc: Our team made a Smart TV application, which can share family's photo albums in Smart TV, using Android Application.
+    - title: The 1st Wikiday (The grand prize)
+      date: 'NOV 2014'
+      loc:  Contents Korea Lab
+      desc: This is a Hackathon contest using the 3D printer. Our team designed a tool which could help in the kitchen.
+    - title: Universal Design Contest (The grand prize)
+      date: '2012.12'
+      loc: The Human Rights Forum Of Persons with Disabilities in Korea
+      desc: I Designed Rest room with improved UX of handicapped person and elderly person.
+  exhib:
+    - title: 2014 Kookmin Univ. Dept Interior Design Graduation Exhibition
+      term: '22 - 28 OCT 2014'
+      loc: Ara Art center, Seoul, Korea
+      desc:
+    - title: The 7th Universal Design Contest Winner’s Exhibition
+      term: '17 - 21 DEC 2012 '
+      loc: Seoul Metro Hyehwa Station, Seoul, Korea
+      desc:
+    # - title: Seagate Hardbot Contest Exhibition
+    #   term: JUL 8 2012
+    #   loc: The Avenue Art center, Seoul, Korea
+    #   desc:
+  # teach:
+  #   - title: Design teacher
+  #     term: 'MAR - JUN 2014'
+  #     loc: Changdeok Girls Middle School, Seoul, Korea
+  #     desc: Teaching basic Fine Art and Graphic Design
