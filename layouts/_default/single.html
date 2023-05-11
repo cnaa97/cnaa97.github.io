@@ -20,5 +20,10 @@
             </div>
         </article>
     </main>
+    {{ if eq hugo.Environment "production" }}
+      {{ if .Site.Params.disqusShortname }}
+        {{ template "_internal/disqus.html" . }}
+      {{ end }}
+    {{ end }}
 </div>
 {{ end }}

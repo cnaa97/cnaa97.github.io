@@ -1,7 +1,9 @@
 baseURL = 'https://junojunho.com/'
 languageCode = 'ko-kr'
 title = '주노준호 블로그'
-googleAnalytics = 'UA-116381325-1' # G-MEASUREMENT_ID
+
+# https://analytics.google.com/analytics/web/?utm_campaign=2023-q2-gbl-all-gafree&utm_source=google-growth&utm_medium=email&utm_content=Wave3_Email2#/a116381325p363131115/admin/streams/table/4853770796
+googleAnalytics = "G-9J0KBXN45J" # G-MEASUREMENT_ID
 
 theme = ["hugo-video"]
 
@@ -34,6 +36,7 @@ theme = ["hugo-video"]
 [params]
   sitename = "주노준호 블로그"
   defaultColor = "light" # set color mode: dark, light, auto
+  disqusShortname = "cnaa97"
 
   # Setting it to 'auto' applies the color scheme based on the visitor's device color preference.If you don't specify anything, ignore this parameter, or leave it blank,
   # the default value is set to 'auto'.

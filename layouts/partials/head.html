@@ -42,4 +42,9 @@
     {{ template "_internal/google_analytics.html" . }}
     {{- end -}}
 
+    {{ if eq hugo.Environment "production" }}
+      {{ if .Site.Params.disqusShortname }}
+        <script id="dsq-count-scr" src="//{{ .Site.Params.disqusShortname }}.disqus.com/count.js" async></script>
+      {{ end }}
+    {{ end }}
 </head>
