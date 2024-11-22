@@ -13,15 +13,18 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+    
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 18
-          cache: yarn
+          node-version: 20.11.1 # Node.js 버전을 20.11.1로 설정
+          cache: 'npm'         # npm 캐시를 활성화
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: npm install
+
       - name: Build website
-        run: yarn build
+        run: npm run build
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
