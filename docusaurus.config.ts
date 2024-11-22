@@ -13,6 +13,7 @@ const config: Config = {
 
   organizationName: 'cnaa97', 
   projectName: 'cnaa97.github.io', 
+  deploymentBranch: 'master',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
