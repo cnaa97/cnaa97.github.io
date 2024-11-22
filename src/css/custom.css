@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navbar.navbar--fixed-top {
+  padding-left: 1.3rem;
+  padding-right: 1.3rem;
+}
+
+.main-wrapper > div > div > main > article > header > h2 {
+  font-size: 2rem;
+}
+
+.markdown {
+  font-size: 110%;
+}
+
+.markdown h1:first-child {
+  font-size: 2.4rem;
+}
+
+:root {
+  --ifm-color-primary: #ef2ebc;
+  --ifm-color-primary-dark: #ed14b4;
+  --ifm-color-primary-darker: #e111aa;
+  --ifm-color-primary-darkest: #b90e8c;
+  --ifm-color-primary-light: #f148c4;
+  --ifm-color-primary-lighter: #f256c9;
+  --ifm-color-primary-lightest: #f57dd5;
+  --ifm-h1-font-size: 1.5rem;
+  --ifm-h2-font-size: 1.25rem;
+  --ifm-h3-font-size: 1rem;
+  --ifm-h4-font-size: 0.875rem;
+  --ifm-h5-font-size: 0.85rem;
+  --ifm-h6-font-size: 0.7rem;
+}
+
+.footer.footer--dark: {
+  /* --ifm-footer-background-color: #2A2C2F; */
+  /* background-color: var(--ifm-footer-background-color); */
+  /* background-color: red !important; */
+}

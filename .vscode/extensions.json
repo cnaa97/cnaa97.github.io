@@ -1,9 +1,6 @@
 {
   "recommendations": [
     "esbenp.prettier-vscode",
-    "mikestead.dotenv",
-    "csstools.postcss",
-    "msjsdiag.debugger-for-chrome",
     "bradlc.vscode-tailwindcss"
   ]
 }
