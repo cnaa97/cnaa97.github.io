@@ -68,7 +68,7 @@ const config: Config = {
         //   position: 'left',
         //   label: 'Tutorial',
         // },
-        {  to: '/docs/about', label:'About',position: 'right' },
+        {  to: '/about', label:'About',position: 'right' },
       ],
     },
     footer: {

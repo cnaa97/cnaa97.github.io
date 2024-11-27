@@ -3,8 +3,6 @@ title: 블로그 개편
 slug: blog-renewal
 tags: 
   - project
-authors:
-  - cnaa97
 ---
 
 블로그를 개편했습니다. 이제 글을 좀 쓰려구요. 
