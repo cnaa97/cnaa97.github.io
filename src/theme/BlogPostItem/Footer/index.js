@@ -7,7 +7,7 @@ export default function FooterWrapper(props) {
   return (
     <>
       {isBlogPostPage && <div className='mt-8'>
-        <div className="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="10" data-lazy="false" data-width="100%" />
+        <div className="fb-comments" data-numposts="10" data-lazy="false" data-width="100%" />
       </div>}
       <Footer {...props} />
     </>
