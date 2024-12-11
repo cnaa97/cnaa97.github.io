@@ -4,7 +4,7 @@ import { useBlogPost } from '@docusaurus/plugin-content-blog/client';
 import FbComment from '../../../components/FbComment';
 
 export default function FooterWrapper(props) {
-  const { isBlogPostPage, metadata, ...o } = useBlogPost();
+  const { isBlogPostPage, metadata } = useBlogPost();
   return (
     <>
       {isBlogPostPage && <FbComment pathname={metadata?.permalink} />}
