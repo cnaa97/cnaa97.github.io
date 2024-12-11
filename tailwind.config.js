@@ -5,7 +5,7 @@ module.exports = {
     container: false,
   },
   darkMode: ["class", '[data-theme="dark"]'],
-  content: ["./src/**/*.{jsx,tsx,html,md}"],
+  content: ["./src/**/*.{jsx,js,tsx,html,md}"],
   theme: {
     extend: {},
   },

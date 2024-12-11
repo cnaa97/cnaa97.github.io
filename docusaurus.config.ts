@@ -56,9 +56,39 @@ const config: Config = {
 
   plugins: [tailwindPlugin],
 
+  headTags: [
+    {
+      tagName: "meta",
+      attributes: {
+        property: 'fb:app_id',
+        content: '&#123;1758797218023586&#125;"/>'
+      },
+    },
+    {
+      tagName: "script",
+      attributes: {},
+      innerHTML: `document.addEventListener('DOMContentLoaded', function() {
+          if (!document.getElementById('fb-root')) {
+            const fbRootDiv = document.createElement('div');
+            fbRootDiv.id = 'fb-root';
+            document.body.prepend(fbRootDiv);
+          }
+        });`,
+    },
+    {
+      tagName: "script",
+      attributes: {
+        async: 'true',
+        defer: 'true',
+        id: "facebook-jssdk",
+        src: "https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v21.0&appId=1758797218023586",
+      },
+    },
+  ],
+
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    // image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: '주노준호 블로그',
       items: [
