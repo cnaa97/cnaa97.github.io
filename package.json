@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "dev": "docusaurus start",
+    "dev": "docusaurus start --port 4000",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -18,9 +18,11 @@
   "dependencies": {
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
+    "lodash": "^4.17.21",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "use-facebook": "^1.2.3"
   },
   "devDependencies": {
     "@docusaurus/core": "^3.6.3",

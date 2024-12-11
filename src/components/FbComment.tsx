@@ -9,7 +9,7 @@ const FbComment = ({ pathname, className }: { pathname: string; className?: stri
       globalThis.FB.XFBML.parse(fbRef.current);
     }
   }, []);
-  
+
   return (
     <div ref={fbRef} className={className}>
       <div
