@@ -14,7 +14,7 @@ const FbComment = ({ pathname, className }: { pathname: string; className?: stri
     <div ref={fbRef} className={className}>
       <div
         className="fb-comments"
-        data-href={`${globalThis.location.origin}${pathname}`}
+        data-href={`${globalThis?.location?.origin}${pathname}`}
         data-width="100%"
         data-numposts="10"
         style={{ width: "100%" }}
