@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>Calendar for Korean</title>
+    <meta property="og:title" content="Calendar" />
+    <meta property="og:url" content="https://junojunho.com/calendar.html" />
+    <meta property="og:description" content="A simple printable calendar with the full year on a single page for Korean" />
+    <style>
+      @import url('https://fonts.bunny.net/css?family=inter:300|oswald:300,400');
+      @media print {
+        @page {
+          margin: 0;
+          padding: 1em;
+        }
+        #info {
+          display: none;
+        }
+        td {
+          font-size: 8px !important;
+        }
+        .weekend {
+          background: #d8d8d8 !important;
+        }
+      }
+      html {
+        font-family: 'Oswald';
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 100%;
+        height: 100%;
+      }
+      table {
+        width: 100%;
+        height: calc(100% - 2.5em);
+        border-collapse: separate;
+        border-spacing: 0.5em 0;
+      }
+      td,
+      th {
+        font-weight: normal;
+        text-transform: uppercase;
+        border-bottom: 1px solid #888;
+        padding: 0.3vmin 0.3vmin;
+        font-size: 0.9vmin;
+        font-weight: 300;
+        color: #000;
+      }
+      th {
+        font-size: 1.1vmin;
+        padding: 0;
+      }
+      td:empty {
+        border: 0;
+      }
+      .date {
+        display: inline-block;
+        width: 1.1em;
+      }
+      .day {
+        display: inline-block;
+        text-align: center;
+        width: 1em;
+        color: #888;
+      }
+      .weekend {
+        background: #eee;
+        font-weight: 400;
+      }
+      p {
+        margin: 0 0 0.5em 0;
+        text-align: center;
+      }
+      * {
+        color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+      .holiday {
+        background: #ffcccc50;
+        font-weight: bold;
+      }
+      #info {
+        font-family: 'Inter', sans-serif;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 5em 2em;
+        width: calc(100% - 6em);
+        background: #333;
+        color: #eee;
+        padding: 1em 1em .5em 1em;
+        font-size: 2vmax;
+        border-radius: .2em;
+      }
+      #info p {
+        text-align: left;
+        margin: 0 0 1em 0;
+        line-height: 135%;
+      }
+      #info a {
+        color: inherit;
+      }
+      .into2 a {
+        margin-right: 0.6rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="info">
+      <p>👋 <strong>안녕하세요!</strong> 이 페이지를 인쇄하면 한 장의 종이에 한 해의 모든 날짜가 표시된 깔끔한 달력을 얻을 수 있습니다. 어떤 크기의 종이에도 자동으로 맞게 조정됩니다. 최상의 결과를 위해 인쇄 설정을 가로 방향으로 조정하고 머리글과 바닥글을 비활성화하세요.</p>
+      <p class="into2">아래 프로젝트에서 영감을 받았고, 대한민국 공휴일과 한글 버전을 추가했습니다. <a href="/calendar.html?lang=en">영어</a><a href="/calendar.html?lang=ko">한글</a><a href="/calendar.html?year=2026">2026</a>
+      </p>
+      <p style="font-size: 50%; color: #999;">이 프로젝트는 <a target="_blank" rel="noreferrer" href="https://neatnik.net/dispenser/">Neatnik</a>에서 영감을 받았습니다. · <a target="_blank" rel="noreferrer" href="https://neatnik.net/dispenser/?project=calendar">원본</a> · <a target="_blank" rel="noreferrer" href="https://github.com/hyunbinseo/holidays-kr">대한민국 공휴일</a></p>
+    </div>
+    <script>
+      async function fetchHolidays(year) {
+        const response = await fetch(
+          'https://holidays.hyunbin.page/basic.json'
+        );
+        const holidaysData = await response.json();
+        return holidaysData[year] || {};
+      }
+
+      async function generateCalendar({
+        year,
+        sofshavua = false,
+        layout = null,
+        lang = 'ko',
+      }) {
+        const weekendDays = sofshavua ? [5, 6] : [6, 7];
+        const holidays = await fetchHolidays(year);
+
+        const dates = {};
+        for (let month = 1; month <= 12; month++) {
+          dates[month] = [];
+          const firstDay = new Date(year, month - 1, 1).getDay();
+          const daysInMonth = new Date(year, month, 0).getDate();
+          for (let i = 0; i < 42; i++) {
+            if (i < firstDay || i >= firstDay + daysInMonth) {
+              dates[month].push(0);
+            } else {
+              dates[month].push(i - firstDay + 1);
+            }
+          }
+        }
+
+        const container = document.createElement('div');
+        container.classList.add('container');
+        const yearHeading = document.createElement('p');
+        yearHeading.textContent = year;
+        container.appendChild(yearHeading);
+
+        const table = document.createElement('table');
+        const thead = document.createElement('thead');
+        const headerRow = document.createElement('tr');
+        for (let month = 1; month <= 12; month++) {
+          const th = document.createElement('th');
+          th.textContent = new Date(year, month - 1).toLocaleString(lang, { month: 'short' });
+          headerRow.appendChild(th);
+        }
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+
+        const tbody = document.createElement('tbody');
+        if (layout === 'aligned-weekdays') {
+          for (let day = 0; day < 42; day++) {
+            const row = document.createElement('tr');
+            for (let month = 1; month <= 12; month++) {
+              const td = document.createElement('td');
+              const date = dates[month][day];
+              if (date !== 0) {
+                const dateObj = new Date(year, month - 1, date);
+                const dateString = `${year}-${String(month).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
+                const isWeekend = weekendDays.includes(dateObj.getDay());
+                const isHoliday = holidays?.[dateString] ? 'holiday' : '';
+                td.className = `${isWeekend ? 'weekend' : ''} ${isHoliday}`;
+                td.textContent = date;
+              }
+              row.appendChild(td);
+            }
+            tbody.appendChild(row);
+          }
+        } else {
+          for (let day = 1; day <= 31; day++) {
+            const row = document.createElement('tr');
+            for (let month = 1; month <= 12; month++) {
+              const td = document.createElement('td');
+              const dateObj = new Date(year, month - 1, day);
+              if (day <= new Date(year, month, 0).getDate()) {
+                const dateString = `${year}-${String(month).padStart(
+                  2,
+                  '0'
+                )}-${String(day).padStart(2, '0')}`;
+                const isWeekend = weekendDays.includes(dateObj.getDay());
+                const isHoliday = holidays[dateString] ? 'holiday' : '';
+                td.className = `${isWeekend ? 'weekend' : ''} ${isHoliday}`;
+                td.innerHTML = `<span class="date">${day}</span> <span class="day">${dateObj.toLocaleString(lang, { weekday: 'short' })[0]}</span>`;
+              }
+              row.appendChild(td);
+            }
+            tbody.appendChild(row);
+          }
+        }
+
+        table.appendChild(tbody);
+        container.appendChild(table);
+        document.body.appendChild(container);
+      }
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const options = {
+        year: urlParams.get('year') || new Date().getFullYear(),
+        sofshavua: urlParams.has('sofshavua'),
+        layout: urlParams.get('layout'),
+        lang: urlParams.get('lang') || 'ko',
+      };
+      generateCalendar(options);
+    </script>
+  </body>
+</html>
