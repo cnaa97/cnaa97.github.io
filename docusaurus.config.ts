@@ -84,8 +84,20 @@ const config: Config = {
         src: "https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v21.0&appId=1758797218023586",
       },
     },
+    {
+      tagName: "script",
+      attributes: {
+        async: 'true',
+        src: "https://www.googletagmanager.com/gtag/js?id=G-9J0KBXN45J",
+      },
+    },
+    {
+      tagName: "script",
+      attributes: {},
+      innerHTML: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-9J0KBXN45J');`,
+    },
   ],
-
+  
   themeConfig: {
     // Replace with your project's social card
     // image: 'img/docusaurus-social-card.jpg',
