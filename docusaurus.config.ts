@@ -1,7 +1,7 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import tailwindPlugin from "./plugins/tailwind-config.cjs";
+import tailwindPlugin from './plugins/tailwind-config.cjs';
 
 const config: Config = {
   title: '주노준호 블로그',
@@ -11,8 +11,8 @@ const config: Config = {
   url: 'https://junojunho.com',
   baseUrl: '/',
 
-  organizationName: 'cnaa97', 
-  projectName: 'cnaa97.github.io', 
+  organizationName: 'cnaa97',
+  projectName: 'cnaa97.github.io',
   deploymentBranch: 'master',
 
   onBrokenLinks: 'throw',
@@ -25,7 +25,7 @@ const config: Config = {
 
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       {
         // docs: {
         //   sidebarPath: './sidebars.ts',
@@ -50,22 +50,28 @@ const config: Config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+        gtag: {
+          trackingID: 'G-9J0KBXN45J',
+          anonymizeIP: true,
+        },
       } satisfies Preset.Options,
     ],
   ],
 
-  plugins: [tailwindPlugin],
+  plugins: [
+    tailwindPlugin,
+  ],
 
   headTags: [
     {
-      tagName: "meta",
+      tagName: 'meta',
       attributes: {
         property: 'fb:app_id',
-        content: '&#123;1758797218023586&#125;"/>'
+        content: '&#123;1758797218023586&#125;"/>',
       },
     },
     {
-      tagName: "script",
+      tagName: 'script',
       attributes: {},
       innerHTML: `document.addEventListener('DOMContentLoaded', function() {
           if (!document.getElementById('fb-root')) {
@@ -76,28 +82,16 @@ const config: Config = {
         });`,
     },
     {
-      tagName: "script",
+      tagName: 'script',
       attributes: {
         async: 'true',
         defer: 'true',
-        id: "facebook-jssdk",
-        src: "https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v21.0&appId=1758797218023586",
+        id: 'facebook-jssdk',
+        src: 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v21.0&appId=1758797218023586',
       },
-    },
-    {
-      tagName: "script",
-      attributes: {
-        async: 'true',
-        src: "https://www.googletagmanager.com/gtag/js?id=G-9J0KBXN45J",
-      },
-    },
-    {
-      tagName: "script",
-      attributes: {},
-      innerHTML: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-9J0KBXN45J');`,
     },
   ],
-  
+
   themeConfig: {
     // Replace with your project's social card
     // image: 'img/docusaurus-social-card.jpg',
@@ -110,7 +104,7 @@ const config: Config = {
         //   position: 'left',
         //   label: 'Tutorial',
         // },
-        {  to: '/about', label:'About',position: 'right' },
+        { to: '/about', label: 'About', position: 'right' },
       ],
     },
     footer: {
