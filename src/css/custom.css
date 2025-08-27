@@ -63,6 +63,10 @@
   margin-top: calc(var(--ifm-h3-vertical-rhythm-top) * var(--ifm-leading));
 }
 
+.markdown video {
+  width: 100%;
+}
+
 .markdown > h1,
 .markdown > h2,
 .markdown > h3,
