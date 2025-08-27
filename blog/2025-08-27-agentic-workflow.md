@@ -134,7 +134,7 @@ adminDb.command({ replSetGetStatus: 1 })
 이렇게 생성된 코드를 테스트도 하고, 실행도 시켜본다. 
 
 ## 코드 생성
-<video src="/assets/2025-08-27-agentic-workflow-01.mp4" controls></video>
+<video src="/assets/2025-08-27-agentic-workflow-01.mp4" controls playsinline preload="auto"></video>
 
 ## 테스트 코드 실행
 ![](/assets/2025-08-27-agentic-workflow-02.png)
