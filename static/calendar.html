@@ -2,12 +2,13 @@
 <html lang="ko">
   <head>
     <meta charset="utf-8" />
-    <title>Calendar for Korean</title>
-    <meta property="og:title" content="Calendar" />
-    <meta property="og:url" content="https://junojunho.com/calendar.html" />
-    <meta property="og:description" content="A simple printable calendar with the full year on a single page for Korean" />
+    <title>1년을 한 장에 보는 인쇄용 달력</title>
+    <meta property="og:title" content="1년을 한 장으로 보는 인쇄용 달력" />
+    <meta property="og:url" content="https://junojunho.com/calendar/2026.html" />
+    <meta property="og:description" content="한 페이지에 1년 전체가 담긴 간단한 인쇄용 달력 (한국어용)" />
     <style>
-      @import url('https://fonts.bunny.net/css?family=inter:300|oswald:300,400');
+      @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap');
+
       @media print {
         @page {
           margin: 0;
@@ -23,11 +24,9 @@
           background: #d8d8d8 !important;
         }
       }
-      html {
-        font-family: 'Oswald';
-      }
       html,
       body {
+        font-family: "IBM Plex Sans KR", sans-serif;
         height: 100%;
         margin: 0;
         padding: 0;
@@ -98,6 +97,20 @@
         font-size: 2vmax;
         border-radius: .2em;
       }
+      #info-close {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background: transparent;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        line-height: 1;
+        color: white;
+      }
+      #info-close:hover {
+        color: #ffffff88;
+      }
       #info p {
         text-align: left;
         margin: 0 0 1em 0;
@@ -113,10 +126,12 @@
   </head>
   <body>
     <div id="info">
+      <button id="info-close" aria-label="닫기">&times;</button>
       <p>👋 <strong>안녕하세요!</strong> 이 페이지를 인쇄하면 한 장의 종이에 한 해의 모든 날짜가 표시된 깔끔한 달력을 얻을 수 있습니다. 어떤 크기의 종이에도 자동으로 맞게 조정됩니다. 최상의 결과를 위해 인쇄 설정을 가로 방향으로 조정하고 머리글과 바닥글을 비활성화하세요.</p>
-      <p class="into2">아래 프로젝트에서 영감을 받았고, 대한민국 공휴일과 한글 버전을 추가했습니다. <a href="/calendar.html?lang=en">영어</a><a href="/calendar.html?lang=ko">한글</a><a href="/calendar.html?year=2026">2026</a>
+      <p class="into2">아래 프로젝트에서 영감을 받았고, 대한민국 공휴일과 한글 버전을 추가했습니다.<br/> <a href="/calendar.html?lang=en">영어</a><a href="/calendar.html?lang=ko">한글</a><a href="/calendar.html?year=2026">2026</a><a href="/calendar.html?year=2027">2027</a>
       </p>
-      <p style="font-size: 50%; color: #999;">이 프로젝트는 <a target="_blank" rel="noreferrer" href="https://neatnik.net/dispenser/">Neatnik</a>에서 영감을 받았습니다. · <a target="_blank" rel="noreferrer" href="https://neatnik.net/dispenser/?project=calendar">원본</a> · <a target="_blank" rel="noreferrer" href="https://github.com/hyunbinseo/holidays-kr">대한민국 공휴일</a></p>
+      <p style="font-size: 50%; color: #999;">이 프로젝트는 <a target="_blank" rel="noreferrer" href="https://neatnik.net/dispenser/">Neatnik</a>에서 영감을 받았습니다. · <a target="_blank" rel="noreferrer" href="https://neatnik.net/dispenser/?project=calendar">원본</a> · <a target="_blank" rel="noreferrer" href="https://github.com/hyunbinseo/holidays-kr">대한민국 공휴일</a>
+      </p>
     </div>
     <script>
       async function fetchHolidays(year) {
@@ -133,7 +148,9 @@
         layout = null,
         lang = 'ko',
       }) {
-        const weekendDays = sofshavua ? [5, 6] : [6, 7];
+        // const weekendDays = [6, 7];
+        const weekendDays = [0, 6];
+        // const weekendDays = sofshavua ? [5, 6] : [6, 7];
         const holidays = await fetchHolidays(year);
 
         const dates = {};
@@ -197,9 +214,10 @@
                   2,
                   '0'
                 )}-${String(day).padStart(2, '0')}`;
-                const isWeekend = weekendDays.includes(dateObj.getDay());
-                const isHoliday = holidays[dateString] ? 'holiday' : '';
-                td.className = `${isWeekend ? 'weekend' : ''} ${isHoliday}`;
+                const thisDay = dateObj.getDay();
+                const isWeekend = weekendDays.includes(thisDay);
+                const isHoliday = holidays[dateString];
+                td.className = `${isWeekend ? `weekend weekend-${day}` : ''} ${isHoliday ? 'holiday' : ''}`;
                 td.innerHTML = `<span class="date">${day}</span> <span class="day">${dateObj.toLocaleString(lang, { weekday: 'short' })[0]}</span>`;
               }
               row.appendChild(td);
@@ -212,6 +230,11 @@
         container.appendChild(table);
         document.body.appendChild(container);
       }
+
+      document.getElementById('info-close')?.addEventListener('click', () => {
+        const info = document.getElementById('info');
+        if (info) { info.style.display = 'none'; }
+      });
 
       const urlParams = new URLSearchParams(window.location.search);
       const options = {
