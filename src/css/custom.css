@@ -77,7 +77,7 @@
 .markdown > h3 {
   --ifm-h3-font-size: 1.25rem;
   --ifm-leading: 0.8rem;
-  margin-bottom: calc(var(--ifm-heading-vertical-rhythm-bottom) * var());
+  margin-bottom: calc(var(--ifm-heading-vertical-rhythm-bottom) * var(--ifm-leading));
   margin-top: calc(var(--ifm-h3-vertical-rhythm-top) * var(--ifm-leading));
 }
 
