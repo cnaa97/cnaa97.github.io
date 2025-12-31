@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20.11.1 # Node.js 버전을 20.11.1로 설정
+          node-version: 23.6.0
           cache: 'npm'         # npm 캐시를 활성화
 
       - name: Install dependencies
