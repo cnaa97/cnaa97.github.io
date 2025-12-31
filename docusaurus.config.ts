@@ -16,7 +16,6 @@ const config: Config = {
   deploymentBranch: 'master',
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
 
   i18n: {
     defaultLocale: 'ko',

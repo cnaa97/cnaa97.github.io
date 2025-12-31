@@ -150,6 +150,7 @@ adminDb.command({ replSetGetStatus: 1 })
 
 다음 팀을 다시 만든다면?
 
+<!-- truncate -->
 
 ## 팀 구성 
 - 사람(나): 팀장 - 작업지시서 작성, 작업 지시, 최종 판단 
