@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>바람의나라 현실-바람시간 비교</title>
+<meta property="og:title" content="바람의나라 현실-바람시간 비교" />
+<meta property="og:url" content="https://junojunho.com/calendar/2026.html" />
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col items-center p-8">
+  <div class="flex flex-col gap-6 w-full max-w-lg">
+    <div class="flex flex-col w-full bg-gray-800 rounded p-6 text-center gap-4">
+      <h2 class="text-xl font-bold mb-2 text-center">현실-바람 시간차</h2>
+      <div>
+        <div class="text-sm text-gray-400">현재 실제 시간</div>
+        <div id="realTime" class="text-lg font-medium mt-1"></div>
+      </div>
+      <div class="border-b border-gray-700 pb-4">
+        <div class="text-sm text-gray-400">현재 바람 시간</div>
+        <div id="baramTime" class="text-4xl font-bold text-cyan-400 mt-2"></div>
+      </div>
+      <div id="questStatus" class="text-lg font-semibold"></div>
+      <div class="border-t border-gray-700 pt-4">
+        <div class="text-sm text-gray-400">다음 바람시간 22시까지</div>
+        <div id="next22" class="text-xl font-bold mt-1"></div>
+      </div>
+    </div>
+    <div class="flex flex-col w-full bg-gray-800 rounded p-6 text-center gap-4">
+      <h2 class="text-xl font-bold mb-2 text-center">현실 시간 → 바람 시간 변환</h2>
+      <div class="grid grid-cols-2">
+        <div class="flex flex-col gap-2">
+          <h3 class="text-sm text-gray-400">현실 시간 입력</h3>
+          <input
+            type="time"
+            id="realInput"
+            class="bg-gray-700 text-white px-3 py-2 rounded text-center h-12"
+          />
+        </div>
+        <div class="flex flex-col gap-2">
+          <h3 class="text-sm text-gray-400 mb-2">바람 시간 확인</h3>
+          <div id="convertedBaram" class="text-lg font-bold text-cyan-400"></div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col w-full bg-gray-800 rounded p-6 text-center gap-4">
+      <h2 class="text-xl font-bold mb-2 text-center">현실-바람 24시간 시간표</h2>
+      <div class="relative border border-gray-700 h-[1440px] overflow-y-auto">
+          <!-- 시간 눈금 -->
+          <div id="hourLines" class="absolute inset-0"></div>
+          <!-- 퀘스트 구간 -->
+          <div id="questBlocks" class="absolute inset-0"></div>
+          <!-- 현재 시간 빨간선 -->
+          <div id="nowLine" class="absolute left-0 w-full h-[1px] bg-red-500"></div>
+        </div>
+    </div>
+  </div>
+<script>
+/* =========================
+   공통 상수
+========================= */
+const base = new Date('1996-03-31T00:00:00+09:00');
+const secondsPerBaramHour = 450;
+const secondsPerBaramDay = 10800;
+
+/* =========================
+   바람 시간 계산
+========================= */
+function getBaramTime(date) {
+  const diffSeconds = (date - base) / 1000;
+  const secondsInDay =
+    ((diffSeconds % secondsPerBaramDay) + secondsPerBaramDay) % secondsPerBaramDay;
+
+  const hourFloat = secondsInDay / secondsPerBaramHour;
+  const hour = Math.floor(hourFloat);
+  const minute = Math.floor(
+    (secondsInDay % secondsPerBaramHour) / (secondsPerBaramHour / 60)
+  );
+
+  return { hour, minute, hourFloat };
+}
+
+/* =========================
+   상단 계산기 업데이트
+========================= */
+function updateTime() {
+  const now = new Date();
+
+  // 실제 시간
+  document.getElementById('realTime').textContent =
+    now.toLocaleString('ko-KR');
+
+  const { hour, minute, hourFloat } = getBaramTime(now);
+
+  // 바람 시간 표시
+  document.getElementById('baramTime').textContent =
+    `${hour.toString().padStart(2,'0')}:${minute.toString().padStart(2,'0')}`;
+
+  // 퀘스트 가능 여부
+  const isQuestTime = (hour >= 22 || hour < 2);
+  const questEl = document.getElementById('questStatus');
+
+  if (isQuestTime) {
+    questEl.textContent = "현재 화화의미소 퀘스트 진행 가능 (22~02)";
+    questEl.className = "text-green-400 text-lg font-semibold";
+  } else {
+    questEl.textContent = "현재 화화의미소 퀘스트 진행 불가";
+    questEl.className = "text-red-400 text-lg font-semibold";
+  }
+
+  // 다음 바람 22시까지
+  let diffBaramHours;
+  if (hourFloat < 22) {
+    diffBaramHours = 22 - hourFloat;
+  } else {
+    diffBaramHours = 24 - hourFloat + 22;
+  }
+
+  const remainingRealSeconds = diffBaramHours * secondsPerBaramHour;
+
+  const realHours = Math.floor(remainingRealSeconds / 3600);
+  const realMinutes = Math.floor((remainingRealSeconds % 3600) / 60);
+  const realSeconds = Math.floor(remainingRealSeconds % 60);
+
+  document.getElementById('next22').textContent =
+    `${realHours}시간 ${realMinutes}분 ${realSeconds}초`;
+
+  updateNowLine(now);
+}
+
+/* =========================
+   타임라인 생성
+========================= */
+function buildHourLines() {
+  const container = document.getElementById("hourLines");
+  container.innerHTML = "";
+
+  for (let h = 0; h < 24; h++) {
+    for (let m of [0, 30]) {
+
+      const totalMinutes = h * 60 + m;
+
+      const line = document.createElement("div");
+
+      const isHour = (m === 0);
+
+      line.className =
+        `absolute left-0 w-full text-xs text-gray-400 
+         ${isHour ? "border-t border-gray-600" : "border-t border-dashed border-gray-700"}`;
+
+      line.style.top = totalMinutes + "px";
+
+      // 해당 시점의 바람 시간 계산
+      const real = new Date();
+      real.setHours(h, m, 0, 0);
+
+      const { hour, minute } = getBaramTime(real);
+
+      // 좌측: 현실 시간
+      // 우측: 바람 시간
+      line.innerHTML = `
+        <div class="absolute left-2 top-1">
+          ${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}
+        </div>
+        <div class="absolute right-2">
+          바람 ${hour.toString().padStart(2,'0')}:${minute.toString().padStart(2,'0')}
+        </div>
+      `;
+
+      container.appendChild(line);
+    }
+  }
+}
+
+/* =========================
+   퀘스트 구간 표시
+   현실 기준 매 3시간마다 45분 시작, 30분 지속
+========================= */
+function buildQuestBlocks() {
+  const container = document.getElementById("questBlocks");
+
+  for (let start = 45; start < 1440; start += 180) {
+    const block = document.createElement("div");
+    block.className =
+      "absolute left-0 w-full bg-green-600/40";
+    block.style.top = start + "px";
+    block.style.height = "30px";
+    container.appendChild(block);
+  }
+}
+
+/* =========================
+   현재 시간 빨간선
+========================= */
+function updateNowLine(now) {
+  const minutes =
+    now.getHours() * 60 +
+    now.getMinutes() +
+    now.getSeconds() / 60;
+
+  document.getElementById("nowLine").style.top =
+    minutes + "px";
+}
+
+/* =========================
+   현실 입력 → 바람 시간 변환
+========================= */
+function handleTimeConvert(value) {
+  if (!value) return;
+
+  const [h, m] = value.split(":").map(Number);
+
+  const date = new Date();
+  date.setHours(h, m, 0, 0);
+
+  const { hour, minute } = getBaramTime(date);
+  document.getElementById("convertedBaram").textContent = `바람 ${hour.toString().padStart(2,'0')}:${minute.toString().padStart(2,'0')}`;
+}
+
+document.getElementById("realInput").addEventListener("input", (e) => handleTimeConvert(e.target.value));
+
+/* =========================
+   초기 실행
+========================= */
+buildHourLines();
+buildQuestBlocks();
+updateTime();
+setInterval(updateTime, 1000);
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9J0KBXN45J"></script>
+<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-9J0KBXN45J');</script>
+</html>
