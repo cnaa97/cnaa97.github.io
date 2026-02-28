@@ -44,15 +44,16 @@
         </div>
       </div>
     </div>
-    <div class="flex flex-col w-full bg-gray-800 rounded p-6 text-center gap-4">
-      <h2 class="text-xl font-bold mb-2 text-center">현실-바람 24시간 시간표</h2>
+    <div class="flex flex-col w-full bg-gray-800 rounded p-6 text-center gap-5">
+      <h2 class="text-xl font-bold text-center">현실-바람 24시간 시간표</h2>
+      <p class="text-xs text-gray-400">녹색 구간: 바람시간 22:00-02:00 사이</p>
       <div class="relative border border-gray-700 h-[1440px] overflow-y-auto">
           <!-- 시간 눈금 -->
           <div id="hourLines" class="absolute inset-0"></div>
           <!-- 퀘스트 구간 -->
           <div id="questBlocks" class="absolute inset-0"></div>
           <!-- 현재 시간 빨간선 -->
-          <div id="nowLine" class="absolute left-0 w-full h-[1px] bg-red-500"></div>
+          <div id="nowLine" class="absolute left-0 w-full h-[3px] bg-red-500 animate-pulse"></div>
         </div>
     </div>
   </div>
@@ -163,7 +164,7 @@ function buildHourLines() {
         <div class="absolute left-2 top-1">
           ${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}
         </div>
-        <div class="absolute right-2">
+        <div class="absolute right-2 top-1">
           바람 ${hour.toString().padStart(2,'0')}:${minute.toString().padStart(2,'0')}
         </div>
       `;
