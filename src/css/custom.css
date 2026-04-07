@@ -98,6 +98,14 @@
   /* @apply static; */
 }
 
+.markdown ul {
+  list-style-type: disc; /* 기본: ● */
+}
+
+.markdown ol {
+  list-style-type: decimal; /* 기본: 1, 2, 3 */
+}
+
 :root {
   --ifm-leading: 0.6rem;
   --ifm-heading-vertical-rhythm-bottom: 0.5;
