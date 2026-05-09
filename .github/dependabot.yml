@@ -1,0 +1,20 @@
+# .github/dependabot.yml
+# Dependabot 설정: 보안 알림은 받되, PR 자동 생성은 제한
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    # 동시에 열리는 PR 최대 개수 (0으로 설정하면 PR 생성 안 함)
+    open-pull-requests-limit: 0
+    # 보안 취약점은 여전히 알림으로 받음
+    # 일반 업데이트는 PR 없이 알림만
+    
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 0
